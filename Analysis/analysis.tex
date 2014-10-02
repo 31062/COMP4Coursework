@@ -3,18 +3,37 @@
 \section{Introduction}
 
 \subsection{Client Identification}
+The clients i will be working with are Rob Curtis and Liz Jeffries who work for individual pubs. The company currntly uses selfwriten bespoke software in their pubs, however as good as their software is there are still a few loop holes. the current system manages all stock except for the kitnchen's and manages all retail. 
+The problem with the current system is that its fails to promt the user about certain parts of the stock management system such as to label each item after it's details have been inputed into the system. The system also does not have a privileges system so stock can be added by anyone without being checked properly. The soultion to one theses problems is simple as it only involves adding a prompt to the user tellingthem to put labbels on the stock. the second is a bit more complex as is involes creating user accounts for each member of staff each with a diffrent of privileges.
 
+The new system must be able to add stock to the data base as well as delet it, it must also be able to keep track of how much of one stock item is left for example how many pints left in a kilderkin as well as know when stock needs to be brought up from the cellar. the system should interact with social media such as twiter and tweet when a new barel is put on a pump as well as record how much stock has been wasted.
+
+The most realist way to implment these soultions: For labelling stock, the system should prompt the user by asking them if they want to print of the stock labbels or simplely print out the labels and prompt the user on screen. For privileges the system could ask for a password when the user trys to enter stock onto the database or the user could log onto the system with a password and them when they tried to add stock the system would check the users privileges.
 \subsection{Define the current system}
+
+The current system has a function for everything that happens in the pub from: selling food and drink,acepts payment; cash, vista, mastercard and bitcoin, managing current stock, recording when staff clock on and off, adding new stock, recording total profit for the session as well as sub profit for both the kitchen and the bar. The current system holds data about stock such as which ales, larger, cider, wines, sprirts, and snacks there is and how much there is in the cellar and on display. also holds data about each item of stock suck as how many sale units are left in the item. For ales it will have data about the name of the ale and what brewery it it from, this is simalar for all stock items. The system also has data about which ales are on rack(stills) and what ales, ciders and largers are on each pump.
 
 \subsection{Describe the problems}
 
+There are a few problems with the current system but all of them are stock related with the beggest problem being not able to record waste correctly with wines and the cola pump. wine is served in four diffrent volumes; small(125ml), medium(175ml), large(250ml) and a bottle(750ml). if someone orderd two large glasses of wine and someone else orderd a medium glass of wine that would leave 75ml left in the bottle that cant be sold as there is not anough wine for a small glass nor does the system have a way of recording waste wine, so the wine is just thrown away with out the waste being recorded. this means that the wine can be drunken with out having to pay for it because there is no way of keeping track of where it has gone. There is a simular problem measureing a dash of coke when people have vodka and coke because some people only have as much coke as vodka but others fill the glass with coke, todiffrent amounts of coke but still charged the same amount.
+
+When recording waste on the system you have to select what item was wasted, how the item was wasted and how much was wasted. for example pump 3, drip tray, 3 pints. however there can be errors when the user is entering this data. So the user could chose the wronge pump or wronge amount of beer wasted, if this happends then there is no way the undo it apart from sending an email to the manager incharge of stocks and even then it does not rectify the problem only explains y there is stock missing or left over. The final problems come when adding stock, when a new dilivery comes in it has to be booked into the system but this can also be done incorrectly and should be checked by the on duty manager however there is nothing to stop anyone from just submitting the new stock without it being checked. Alot of the stock comes in boxs such as crips or penuts so there are a certain amount of pakets inside and when the user enters the box on the system it comes up with a list of how many pakets are in the box, but if the corret number is not on the list the user has to contact the admin to get him to modify the code so that the correct number is added to the list.
+
+when refilling stock behind the barthere are two ways of doing it the user can either refill all items by stock type or they can refill all the items in an location, however the user does this they have to acsses the system multiply times to get the next list that needs refilling which elongate the process considerably.
+
+
+
 \subsection{Section appendix}
+
 
 \section{Investigation}
 
 \subsection{The current system}
 
+The current system works with an ever growing data base which holds all of the stock the pub has at the moment and all the stock the pub has sold as well as holds staff details. The system has many functions which cover a broad range of tasks such as checking stock
+
 \subsubsection{Data sources and destinations}
+
 
 \subsubsection{Algorithms}
 
