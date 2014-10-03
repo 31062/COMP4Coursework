@@ -3,10 +3,19 @@
 \section{Introduction}
 
 \subsection{Client Identification}
+The clients i will be working with are Rob Curtis and Liz Jeffries who work for individual pubs. The company currntly uses selfwriten bespoke software in their pubs, however as good as their software is there are still a few loop holes. the current system manages all stock except for the kitnchen's and manages all retail. 
 
 \subsection{Define the current system}
 
+The current system has a function for everything that happens in the pub from: selling food and drink,acepts payment; cash, vista, mastercard and bitcoin, managing current stock, recording when staff clock on and off, adding new stock, recording total profit for the session as well as sub profit for both the kitchen and the bar. The current system holds data about stock such as which ales, larger, cider, wines, sprirts, and snacks there is and how much there is in the cellar and on display. also holds data about each item of stock suck as how many sale units are left in the item. For ales it will have data about the name of the ale and what brewery it it from, this is simalar for all stock items. The system also has data about which ales are on rack(stills) and what ales, ciders and largers are on each pump.
+
 \subsection{Describe the problems}
+
+There are a few problems with the current system but all of them are stock related with the beggest problem being not able to record waste correctly with wines and the cola pump. wine is served in four diffrent volumes; small(125ml), medium(175ml), large(250ml) and a bottle(750ml). if someone orderd two large glasses of wine and someone else orderd a medium glass of wine that would leave 75ml left in the bottle that cant be sold as there is not anough wine for a small glass nor does the system have a way of recording waste wine, so the wine is just thrown away with out the waste being recorded. this means that the wine can be drunken with out having to pay for it because there is no way of keeping track of where it has gone. There is a simular problem measureing a dash of coke when people have vodka and coke because some people only have as much coke as vodka but others fill the glass with coke, todiffrent amounts of coke but still charged the same amount.
+
+When recording waste on the system you have to select what item was wasted, how the item was wasted and how much was wasted. for example pump 3, drip tray, 3 pints. however there can be errors when the user is entering this data. So the user could chose the wronge pump or wronge amount of beer wasted, if this happends then there is no way the undo it apart from sending an email to the manager incharge of stocks and even then it does not rectify the problem only explains y there is stock missing or left over. The final problems come when adding stock, when a new dilivery comes in it has to be booked into the system but this can also be done incorrectly and should be checked by the on duty manager however there is nothing to stop anyone from just submitting the new stock without it being checked. Alot of the stock comes in boxs such as crips or penuts so there are a certain amount of pakets inside and when the user enters the box on the system it comes up with a list of how many pakets are in the box, but if the corret number is not on the list the user has to contact the admin to get him to modify the code so that the correct number is added to the list.
+
+when refilling stock behind the barthere are two ways of doing it the user can either refill all items by stock type or they can refill all the items in an location, however the user does this they have to acsses the system multiply times to get the next list that needs refilling which elongate the process considerably.
 
 \subsection{Section appendix}
 
@@ -14,7 +23,24 @@
 
 \subsection{The current system}
 
+the current system dealls with all reatal in the pub wether it for the kitchen or the bar or paying for stock it is all done through the till system. the most important part of this system and the part i will be trying to replace is the stock management section. there are sevral procces realated to and including stock. the most inportant thing for a pub to have is a good reputation because bring customers, in order to keep a good reputation the pub must sell good quality beer which is safe to drink. in order to do this the pub must make sure they dont sell any bad beer such as out of date beer which can make people very ill. to stop beer going out of data the user must complete the processes of stock rotation(bottling up) at the end of each session. stock rotation is where you make sure you older beers will be sold first and your newer beers will be sold aster that meaning no stock sould go out of data unless the pub is over stocked.
+
+the user must once a week complete a stock check to ensure the system is correct and that there are no missing stock items. to chech the stock the user must acsess the till and  print off a list of all the stock they want to check, this can be done by location or stock type. once the list is printed off the user must go to the cellar and manually check if all the stock is correct, this process is to help remove redundant data from the database. for example a barrel of ale may have gone off but there were 20 pints still left in it and this was not recorded on the till for some reason, the system would still think the pub had a barrel ale so it would not reorder that stock hence the pub runs out of that sort of beer.
+
+apart form stock rotaion which happens at the end of every session entering new stock into the system is most comman manual process. when new stock comes to the pub it is checked to make sure it is the right stock and that the order form is correct and invoice refrance, depending on how the derliverly is getting paid, the stock is then paid for with cash or through an invoice. apon arivel every box and barel is given a labbel with a four digit code(stockID) and a three digit code(check digits), this number works simarly to a parity bit. once given a label the stock is put in the back of the cellar to help with stock rotation.
+
 \subsubsection{Data sources and destinations}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{source} & \textbf{data} & \textbf{example data} & \textfb{destination} \\ \hline
+    user & staff details & address & users table in data base \\ \hline
+    user & staff hours worked & 120 & users table in data base \\ \hline
+    user table in data base & staff hours worked & 120 & indevidual pubs staff payment records \\ \hline
+\end{tabular}
+\label{tab:range_examples}
+\end{center}
 
 \subsubsection{Algorithms}
 
@@ -32,13 +58,19 @@
 
 \subsubsection{Volumetrics}
 
+ the new system with have to deal with rouly 1000 transactions a night with the data base being edited an a regular bases; new stock will be added to the data base about 15 times a week causing the realy ales table to have new ales added to it with every new geust beer the pub has. the other stock tables should not change the pub gets a diffrent type of stock which is serverd in a diffrent quantity. the users table will change the least as it is only changed when new staff are hired of staff leave.
+
 \section{Objectives}
 
 \subsection{General Objectives}
 
+the genral objectuve of this project is to create a retail stock system woch can manage all areas of stock in the haymakers pub.
+
 \subsection{Specific Objectives}
 
 \subsection{Core Objectives}
+
+the core objectives of this project are to make a retail stock system that is secure because it will hold personal infomation about staff as well as deal with customer bank details. the user interface must be simple, users musts only need the ability to use a keybord 
 
 \subsection{Other Objectives}
 
