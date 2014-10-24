@@ -3,15 +3,19 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-The clients i will be working with are Rob Curtis and Liz Jeffries who work for individual pubs. The company currntly uses selfwriten bespoke software in their pubs, however as good as their software is there are still a few loop holes. the current system manages all stock except for the kitnchen's and manages all retail. 
-The problem with the current system is that its fails to promt the user about certain parts of the stock management system such as to label each item after it's details have been inputed into the system. The system also does not have a privileges system so stock can be added by anyone without being checked properly. The soultion to one theses problems is simple as it only involves adding a prompt to the user tellingthem to put labbels on the stock. the second is a bit more complex as is involes creating user accounts for each member of staff each with a diffrent of privileges.
 
-The new system must be able to add stock to the data base as well as delet it, it must also be able to keep track of how much of one stock item is left for example how many pints left in a kilderkin as well as know when stock needs to be brought up from the cellar. the system should interact with social media such as twiter and tweet when a new barel is put on a pump as well as record how much stock has been wasted.
+The clients i will be working with are Rob Curtis and Liz Jeffries. Rob is a skilled programer with a PHD in jarva scripting but also has a good understanding of everything in the computing world from construcing websites and database to creating androi apps. However liz is the pub's licence holder and does not have expearince with computers exepted for acssessing the internet, sending email for which she mainly does on a hudli tablet. Rob and Liz are both imployed by indervidual pubs limited which is ran by steve; a highly programer and Mathematician who has alot of in the field of programing and is the most familer with the current system. Steve also wrote the current system.
 
-The most realist way to implment these soultions: For labelling stock, the system should prompt the user by asking them if they want to print of the stock labbels or simplely print out the labels and prompt the user on screen. For privileges the system could ask for a password when the user trys to enter stock onto the database or the user could log onto the system with a password and them when they tried to add stock the system would check the users privileges.
-\subsection{Define the current system}
+Rob and Liz have currently employ 11 people as bar staff all with diffrent technical abillitys such simon; a masters programing student. Nick; who is a self employed bicycle repairman but also knows his way around some quite complex sound systems. And shawn who has Down's syndrome and is unable to use the system. Rob has asked me to create a new stock controll system as he is constantly trying to work around the current systems lack of versatility. And having to ring Steve whenever they can not solve the problem localy, Steve has an comandline to the system via and app on his phone.
 
-The current system has a function for everything that happens in the pub from: selling food and drink,acepts payment; cash, vista, mastercard and bitcoin, managing current stock, recording when staff clock on and off, adding new stock, recording total profit for the session as well as sub profit for both the kitchen and the bar. The current system holds data about stock such as which ales, larger, cider, wines, sprirts, and snacks there is and how much there is in the cellar and on display. also holds data about each item of stock suck as how many sale units are left in the item. For ales it will have data about the name of the ale and what brewery it it from, this is simalar for all stock items. The system also has data about which ales are on rack(stills) and what ales, ciders and largers are on each pump.
+\subsection{describe current system}
+
+Stock management, the system manages the stock from when it is first enterd into the data base. once in a the database the stock is never deleted unless it was enterd incorrecty, in which case it is only edited. the only infomation to be deleted from the database is user infomation.
+
+The current system has many functions besides stock management such the sale of item stock its self, this can be done by a card transaction, bitcoin or by cash in hand. the system handles the transaction makes the nessesery ajustments to the database and then sends data; time stamp, user, stock ID, retail prize of the transaction to the inderviduals pub's website. The system also records when staff clock on and off, total profit for the session as well as sub profits for the kitchen and bar. All this is sent to the companys website where it can be veiwed by with the correct permissions.
+
+The system can controll the lights in the room and sets the indoor lights to dim when it darkens outside, but also turns the outdoor lights on at the same event. 
+
 
 \subsection{Describe the problems}
 
@@ -24,6 +28,45 @@ when refilling stock behind the barthere are two ways of doing it the user can e
 
 
 \subsection{Section appendix}
+
+Interveiw outcome:
+
+what manual processes do u have to carry out with the current stock system?
+\begin{itemize}
+    \item new stock order; when we get new stock from the suppliers we have to individually enter each item into the system by typing.
+    \item drip trays; we have to measure out roughly how much is being wasted.
+	\item stock rotation; as part of a stock check i have to make sure the stock has been rotated properly. so the newer stock is at the back of the shelf and the older stock is at the frount. i know how old an item is because of its stock ID, the greater the number, the newer it is.
+	\item stock check; as a manager i have to check that we have the stock have on site matches what it say we have on the system, this is the remove any redundanciesfor example: A barrel of beer may have gone bad but it's hasn't been logged on the system for some reason. the system which is resposible for reordering stock doesnt reorder that barrel because it thinks we still have it and we end up a barrel short. with a stock check this would also be very difficult to figer out what had happend.
+	\item record line waste; when a barrel is finished we clean the line before putting on a different beer. we then put a new beer on and record 2 pints of waste which is the volume of the pipe as there will be two pints in the pipe that we cant sell.
+\end{itemize}
+
+What data or information is recorded in the current system?
+How much data is recorded at present?
+What data or information is to be recorded in the proposed system? How much data will the proposed system record?
+How frequently will the data need to be updated?
+Will new records need to be added or old ones deleted? How often?
+Will the changes come in batches or in ones and twos?
+How important is the data or information that is recorded?
+What processes or functions are performed by the current system?
+What processes or functions are to be performed by the new system?
+When should they be done and where?
+What special algorithms do these processes use?
+Which processes should be executed manually?
+What are the inputs to the current system?
+What inputs are required for the proposed system?
+What are the outputs from the current system?
+What outputs will be required from the proposed system?
+Are hard copies required?
+How often will outputs be required?
+What computing resources does the client possess?
+Is the client prepared to purchase hardware/software resources?
+Is security an issues?
+Should there be restricted access to particular areas?
+How are exceptions and errors handled in the current system?
+What errors and exceptions should be reported in the proposed system?
+How should they be reported?
+Are there any constraints on hardware, software, data, methods of working, cost, time, etc.?
+Does the user have a particular solution in mind?
 
 
 \section{Investigation}
