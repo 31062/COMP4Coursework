@@ -152,13 +152,17 @@ Does the user have a particular solution in mind?
 \begin{tabular}{|l|l|l|l|l|l|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
-	stock ID & integer & 2 bytes & 4 digits, must exsist & 3845 & unique to each stock item\\ \hline
-	 \\ \hline
-	\\ \hline
-	 \\ \hline
-	
-	
-    
+	stock ID & int & 2 bytes & 4 digits, must exsist & 3845 & unique to each stock item\\ \hline
+	user ID & int & 2 bytes & 2 digits, must exsist & 04 & unique to each member of staff\\ \hline
+	producer & string & 12 bytes & 4-12 chariters & taddingtons & name of product producer\\ \hline
+	supplier & string & 14 bytes & 4-14 chariters & milton brewery & name of product supplier \\ \hline
+	retail price & float & 2 bytes & int or decimal & 3.10 & price of a product for one base unit\\ \hline
+	unit retail & int & 4 bytes & int 1-3 digits & 750 & base unit the product is sold in\\ \hline
+	stockname & string & 14 bytes & string 4-14 & dead pony club & name of a product\\ \hline
+	unit purchase & int & 3 bytes & 144 & int 1-144 & 72 & amount of the product in a box or barrel\\ \hline
+	unit cost & int & 3 bytes & int 0-150 & 89 & cost of unit purchase\\ \hline
+	stock type & string & 8 bytes & 5-8 chariters & real ale & type of stock\\ \hline
+	 
 \end{tabular}
 \label{tab:range_examples}
 \end{center}
