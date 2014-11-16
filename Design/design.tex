@@ -40,7 +40,7 @@
 	retail price & float & 2 bytes & int or decimal & 3.10 & price of a product for one base unit\\ \hline
 	unit retail & int & 4 bytes & int 1-3 digits & 750 & base unit the product is sold in\\ \hline
 	stockname & string & 14 bytes & string 4-14 & dead pony club & name of a product\\ \hline
-	unit purchase & int & 3 bytes & 144 & int 1-144 & 72 & amount of the product in a box or barrel\\ \hline
+	unit purchase & int & 3 bytes & 144 & int 1-144 & 72 & amount of the product\\ \hline
 	unit cost & int & 3 bytes & int 0-150 & 89 & cost of unit purchase\\ \hline
 	stock type & string & 8 bytes & 5-8 chariters & real ale & type of stock\\ \hline
 	 
@@ -61,13 +61,41 @@ stock type(\underline{stock type ID}, stock type)
 producers(\underline{producer ID}, producer)
 supplier(\underline{supplier ID}, supplier)
 permissions(\underline{permission ID}, permission)
-real ale(\nderline{real ale ID}, alcohol percentage, 
-snacks
-spirits
-unit retail
-unit purchase
+real ale(\underline{real ale ID}, ale name, alcohol percentage, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+snacks(\underline{snack ID}, snack name, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+spirits(\underline{spirts ID}, spirit name, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+larger(\underline{larger ID}, larger name)
+unit retail(\underline{unit retail ID}, unit retail)
+unit purchase(\underline{unit purchase ID}, unit purchase)
 
 \subsection{Normalisation}
+
+\subsubsection{unf}
+
+user ID
+user name
+mobile no.
+landline
+city
+street
+house no.
+postcode
+NIN
+sourt code
+acount no.
+permssions
+stock ID 
+stock name
+stock type
+unit retail
+unit purchase
+retail price
+unit cost
+producer
+supplier
+
+
+
 
 \subsubsection{ER Diagrams}
 
