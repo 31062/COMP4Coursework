@@ -5,8 +5,9 @@
 \subsection{Client Identification}
 The clients i will be working with are Rob Curtis and Liz Jeffries who work for individual pubs. The company currntly uses selfwriten bespoke software in their pubs, however as good as their software is there are still a few loop holes. the current system manages all stock except for the kitnchen's and manages all retail. 
 
-\subsection{Define the current system}
+The clients i will be working with are Rob Curtis and Liz Jeffries. Rob is a skilled programer with a PHD in jarva scripting but also has a good understanding of everything in the computing world from construcing websites and database to creating androi apps. However liz is the pub's licence holder and does not have expearince with computers exepted for acssessing the internet, sending email for which she mainly does on a hudli tablet. Rob and Liz are both imployed by indervidual pubs limited which is ran by steve; a highly programer and Mathematician who has alot of in the field of programing and is the most familer with the current system. Steve also wrote the current system.
 
+<<<<<<< HEAD
 The current system has a function for everything that happens in the pub from: selling food and drink,acepts payment; cash, vista, mastercard and bitcoin, managing current stock, recording when staff clock on and off, adding new stock, recording total profit for the session as well as sub profit for both the kitchen and the bar. The current system holds data about stock such as which ales, larger, cider, wines, sprirts, and snacks there is and how much there is in the cellar and on display. also holds data about each item of stock suck as how many sale units are left in the item. For ales it will have data about the name of the ale and what brewery it it from, this is simalar for all stock items. The system also has data about which ales are on rack(stills) and what ales, ciders and largers are on each pump.
 
 \subsection{Describe the problems}
@@ -20,17 +21,134 @@ when refilling stock behind the barthere are two ways of doing it the user can e
 \subsection{Section appendix}
 
 \section{Investigation}
+=======
+Rob and Liz have currently employ 11 people as bar staff all with diffrent technical abillitys such simon; a masters programing student. Nick; who is a self employed bicycle repairman but also knows his way around some quite complex sound systems. And shawn who has Down's syndrome and is unable to use the system. Rob has asked me to create a new stock controll system as he is constantly trying to work around the current systems lack of versatility. And having to ring Steve whenever they can not solve the problem localy, Steve has an comandline to the system via and app on his phone.
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
 
 \subsection{The current system}
 
+<<<<<<< HEAD
 the current system dealls with all reatal in the pub wether it for the kitchen or the bar or paying for stock it is all done through the till system. the most important part of this system and the part i will be trying to replace is the stock management section. there are sevral procces realated to and including stock. the most inportant thing for a pub to have is a good reputation because bring customers, in order to keep a good reputation the pub must sell good quality beer which is safe to drink. in order to do this the pub must make sure they dont sell any bad beer such as out of date beer which can make people very ill. to stop beer going out of data the user must complete the processes of stock rotation(bottling up) at the end of each session. stock rotation is where you make sure you older beers will be sold first and your newer beers will be sold aster that meaning no stock sould go out of data unless the pub is over stocked.
 
 the user must once a week complete a stock check to ensure the system is correct and that there are no missing stock items. to chech the stock the user must acsess the till and  print off a list of all the stock they want to check, this can be done by location or stock type. once the list is printed off the user must go to the cellar and manually check if all the stock is correct, this process is to help remove redundant data from the database. for example a barrel of ale may have gone off but there were 20 pints still left in it and this was not recorded on the till for some reason, the system would still think the pub had a barrel ale so it would not reorder that stock hence the pub runs out of that sort of beer.
 
 apart form stock rotaion which happens at the end of every session entering new stock into the system is most comman manual process. when new stock comes to the pub it is checked to make sure it is the right stock and that the order form is correct and invoice refrance, depending on how the derliverly is getting paid, the stock is then paid for with cash or through an invoice. apon arivel every box and barel is given a labbel with a four digit code(stockID) and a three digit code(check digits), this number works simarly to a parity bit. once given a label the stock is put in the back of the cellar to help with stock rotation.
+=======
+Stock management, the system manages the stock from when it is first enterd into the data base. once in a the database the stock is never deleted unless it was enterd incorrecty, in which case it is only edited. the only infomation to be deleted from the database is user infomation.
+
+The current system has many functions besides stock management such the sale of item stock its self, this can be done by a card transaction, bitcoin or by cash in hand. the system handles the transaction makes the nessesery ajustments to the database and then sends data; time stamp, user, stock ID, retail prize of the transaction to the inderviduals pub's website. The system also records when staff clock on and off, total profit for the session as well as sub profits for the kitchen and bar. All this is sent to the companys website where it can be veiwed by with the correct permissions.
+
+The system can controll the lights in the room and sets the indoor lights to dim when it darkens outside, but also turns the outdoor lights on at the same event. The system also has the ability to print out food orders, stock item labbels and stock lists;by location and by stock type.
+
+The currnt system hold stock items in a table such as this: Stock item(\underline{stock ID}, name, \emph{stock type}, retail prize, \emph{producer}, \emph{suplier}, shelf life, \emph{unit purchase}, \emph{unit retail}, purchase cost, \emph{stock location}, units used, units remainning.
+
+
+
+\subsection{Describe the problems}
+
+There are a few problems with the current system but all of them are stock related with the beggest problem being not able to record waste correctly with wines and the cola pump. wine is served in four diffrent volumes; small(125ml), medium(175ml), large(250ml) and a bottle(750ml). if someone orderd two large glasses of wine and someone else orderd a medium glass of wine that would leave 75ml left in the bottle that cant be sold as there is not anough wine for a small glass nor does the system have a way of recording waste wine, so the wine is just thrown away with out the waste being recorded. this means that the wine can be drunken with out having to pay for it because there is no way of keeping track of where it has gone. There is a simular problem measureing a dash of coke when people have vodka and coke because some people only have as much coke as vodka but others fill the glass with coke, todiffrent amounts of coke but still charged the same amount.
+
+When recording waste on the system you have to select what item was wasted, how the item was wasted and how much was wasted. for example pump 3, drip tray, 3 pints. however there can be errors when the user is entering this data. So the user could chose the wronge pump or wronge amount of beer wasted, if this happends then there is no way the undo it apart from sending an email to steve and even then it does not correct the problem only explains why the system says there is stock missing or left over. The final problems come when adding stock, when a new dilivery comes in it has to be booked into the system but this can also be done incorrectly and should be checked by the on duty manager however there is nothing to stop anyone from just submitting the new stock without it being checked. Alot of the stock comes in boxs such as crips or penuts so there are a certain amount of pakets inside and when the user enters the box on the system it comes up with a list of how many pakets are in the box, but if the corret number is not on the list the user has to contact the admin to get him to modify the code so that the correct number is added to the list.
+
+when refilling stock behind the bar there are two ways of doing it the user can either refill all items by stock type or they can refill all the items in an location, however the user does this they have to acsses the system multiply times to get the next list that needs refilling which elongate the process considerably.
+
+
+
+\subsection{Section appendix}
+
+Interveiw with Rob outcome:
+
+what manual processes do u have to carry out with the current stock system?
+\begin{itemize}
+    \item new stock order; when we get new stock from the suppliers we have to individually enter each item into the system by typing.
+    \item drip trays; we have to measure out roughly how much is being wasted.
+	\item stock rotation; as part of a stock check i have to make sure the stock has been rotated properly. so the newer stock is at the back of the shelf and the older stock is at the frount. i know how old an item is because of its stock ID, the greater the number, the newer it is.
+	\item stock check; as a manager i have to check that we have the stock have on site matches what it say we have on the system, this is the remove any redundanciesfor example: A barrel of beer may have gone bad but it's hasn't been logged on the system for some reason. the system which is resposible for reordering stock doesnt reorder that barrel because it thinks we still have it and we end up a barrel short. with a stock check this would also be very difficult to figer out what had happend.
+	\item record line waste; when a barrel is finished we clean the line before putting on a different beer. we then put a new beer on and record 2 pints of waste which is the volume of the pipe as there will be two pints in the pipe that we cant sell.
+\end{itemize}
+
+ what are the mains problems you have with the system?
+\begin{itemize}
+	\item cola pump; when a customer asks for a coke and vodka we ask how much coke they want, but if one customer only wants as much coke as vodka and another want the remainder of the glass filling, they are being charged the same amount for diffrent amounts of coke because we have no way to measure it. this also means that we can't record wastage very easily so we dont.
+	\item wine wastage; often we are left with 75ml at the bottom of a wine bottle that we can sell because of the measures and weights act which states wine must be sold in 125ml, 175ml or 250ml glasses or by the bottle. this wine is often wasted as a result
+	\item packet quantity; when entering new stock which is a box or pack i have to enter how many packets or bottles are inside from a fixed list however if the correct number is not there i have to ring steve to add the new option to the system
+	\item refill items; when we have to refill stock or bottle up at the end of the night i have to print out sevral differnent stock list by location or by stock type instead of printing out one list to refill all stock with a display quantity.
+\end{itemize}
+
+do you have a prefered soloution to these problems?
+\begin{itemize}
+	\item Cola pump? No, we can not physically measure it so there is no point creating a option on the system to record it.
+	\item Wine wastage? We can record the wastage but it would be good if we record how much of each wine we have in total then we sell wine from that collective source and not from each bottle.
+	\item Packet quantity? I would like a menu where i can add new box, pack and card size, so i dont have to ring steve, cut out the midle man.
+	\item Refill items? add a new option to the refill menu where u can refill all stock which are on display.
+\end{itemize}
+
+What data or information is recorded in the current system?
+\begin{itemize}
+	\item Name of item; the name of the drink or snack.
+	\item Retail prize; the prize it cost the cutomer to buy a unit retail of the product .
+	\item Producer; manufacturer of the product.
+	\item Supplier; company that sells the product to the pub.
+	\item Shelf life; date by which the product can not be sold after.
+	\item Unit purchase; the unit that the pub buys the product in. 
+	\item Unit retail; unit the pub sell the product
+	\item Purchase cost; the cost the pub pays for 1 unit of a product
+	\item Stock type; the type of stock such as snacks, real ale, cider
+	\item Stock location; where the product is displayed
+	\item User details; personal details of users DOB, bank details, National Insurance Number, privileges, name, address, phone number
+\end{itemize}
+
+How much data is recorded at present?
+What data or information is to be recorded in the proposed system? How much data will the proposed system record?
+How frequently will the data need to be updated?
+Will new records need to be added or old ones deleted? How often?
+Will the changes come in batches or in ones and twos?
+How important is the data or information that is recorded?
+What processes or functions are performed by the current system?
+What processes or functions are to be performed by the new system?
+When should they be done and where?
+What special algorithms do these processes use?
+Which processes should be executed manually?
+What are the inputs to the current system?
+What inputs are required for the proposed system?
+What are the outputs from the current system?
+What outputs will be required from the proposed system?
+Are hard copies required?
+How often will outputs be required?
+What computing resources does the client possess?
+Is the client prepared to purchase hardware/software resources?
+Is security an issues?
+Should there be restricted access to particular areas?
+How are exceptions and errors handled in the current system?
+What errors and exceptions should be reported in the proposed system?
+How should they be reported?
+Are there any constraints on hardware, software, data, methods of working, cost, time, etc.?
+Does the user have a particular solution in mind?
+
+
+\section{Investigation}
+
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
 
 \subsubsection{Data sources and destinations}
+<<<<<<< HEAD
 
+=======
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+	User & New stock & Stock type & database; stock item; all \\ \hline
+	user & wastage & 2 pints pump 8 &database; stock item; units used, units remaining. \\ \hline
+	database; stock item; all & stock check & shelf life & user \\ \hline
+	database; stock item; stock ID, name, units remaining & stock items & stock ID & user \\ \hline
+	
+	
+    
+\end{tabular}
+\label{tab:range_examples}
+\end{center}
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
 
 \subsubsection{Algorithms}
 
@@ -41,6 +159,20 @@ apart form stock rotaion which happens at the end of every session entering new 
 \subsection{The proposed system}
 
 \subsubsection{Data sources and destinations}
+\begin{center}
+\begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Source} & \textbf{Data} & \textbf{Example Data} & \textbf{Destination} \\ \hline
+	User & New stock & Stock type & database; stock item; all \\ \hline
+	user & wastage & 2 pints pump 8 &database; stock item; units used, units remaining. \\ \hline
+	database; stock item; all & stock check & shelf life & user \\ \hline
+	database; stock item; stock ID, name, units remaining & stock items & stock ID & user \\ \hline
+	
+	
+    
+\end{tabular}
+\label{tab:range_examples}
+\end{center}
 
 \subsubsection{Data flow diagram}
 
