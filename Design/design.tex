@@ -15,35 +15,31 @@ refill stock: some stock items will have an display quantity and product display
 \subsection{System flowcharts showing an overview of the complete system}
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:\git\COMP4Coursework\Design\pdf imagesflowdiagram_new_stock.pdf}
+    \includegraphics[width=\textwidth]{./Design/pdfimages/flowdiagram_new_stock.pdf}
     \caption{flowdiagram for adding new stock} \label{fig:new stock flowchart}
 \end{figure}
 
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:\git\COMP4Coursework\Design\pdf images\flowdiagram_use_stock.pdf}
-    \caption{The result of executing the print() function} \label{fig:print_function_result}
+    \includegraphics[width=\textwidth]{./Design/pdfimages/flowdiagram_use_stock.pdf}
+    \caption{flow diagram use stock} \label{fig:use stock flowdiagram}
 \end{figure}
-
 
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:\git\COMP4Coursework\Design}
-    \caption{The result of executing the print() function} \label{fig:print_function_result}
+    \includegraphics[width=\textwidth]{./Design/pdfimages/flowdiagram_record_waste.pdf}
+    \caption{flow diagram for recording waste} \label{fig:record waste flowdiagram}
 \end{figure}
 
 
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:\git\COMP4Coursework\Design}
-    \caption{The result of executing the print() function} \label{fig:print_function_result}
-\end{figure}
-
-
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{U:\git\COMP4Coursework\Design}
-    \caption{The result of executing the print() function} \label{fig:print_function_result}
-\end{figure}
 
 \section{User Interface Designs}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Design/pdfimages/gui.pdf}
+    \caption{first gui menu} \label{fig:gui homescreen}
+\end{figure}
+
+
 
 \section{Program Structure}
 
@@ -77,7 +73,7 @@ refill stock: some stock items will have an display quantity and product display
 	retail price & float & 2 bytes & int or decimal & 3.10 & price of a product for one base unit\\ \hline
 	unit retail & int & 4 bytes & int 1-3 digits & 750 & base unit the product is sold in\\ \hline
 	stockname & string & 14 bytes & string 4-14 & dead pony club & name of a product\\ \hline
-	unit purchase & int & 3 bytes & 144 & int 1-144 & 72 & amount of the product\\ \hline
+	unit purchase & int & 3 bytes & int 1-144 & 72 & amount of the product\\ \hline
 	unit cost & int & 3 bytes & int 0-150 & 89 & cost of unit purchase\\ \hline
 	stock type & string & 8 bytes & 5-8 chariters & real ale & type of stock\\ \hline
 	 
@@ -93,17 +89,29 @@ refill stock: some stock items will have an display quantity and product display
 \section{Database Design}
 
 my data base will have 10 tables; users, stock, stock type, real ale, snacks, spirits, unit retail, unit purchase, producer, supplier, permissions.
+
 user (\underline{user ID}, user name, \emph{permissions}, postcode, city, street, house no., landline, mobile no)
+
 stock (\underline{stock ID}, stock name, \emph{stock type}, \emph{unit retail}, retail price, amount used, amount remaining, sell by date, alcohol percentage)
+
 stock type(\underline{stock type ID}, stock type)
+
 producers(\underline{producer ID}, producer)
+
 supplier(\underline{supplier ID}, supplier)
+
 permissions(\underline{permission ID}, permission)
+
 real ale(\underline{real ale ID}, ale name, alcohol percentage, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+
 snacks(\underline{snack ID}, snack name, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+
 spirits(\underline{spirts ID}, spirit name, \emph{unit purchase}, \emph{unit retail}, \emph{producer})
+
 larger(\underline{larger ID}, larger name)
+
 unit retail(\underline{unit retail ID}, unit retail)
+
 unit purchase(\underline{unit purchase ID}, unit purchase)
 
 \subsection{Normalisation}
