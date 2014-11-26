@@ -4,6 +4,14 @@
 
 \subsection{Short description of the main parts of the system}
 
+Entering new stock: One of the main parts of the system is that it must be able to record inputted data by the user when new stock is to be added to the system. during this prosses the system should display one window into which the user can enter all the data required for the product, this data will then be verifyed before enterd into the database. If the data does not pass verifcation then the user will be told which fields are incorrect and what data should inputted to those fields.
+
+Sending data via email: many parts of the system genarate data that is useful for the pubs management such as all the transactions done by one user in a session. This data will then be sent via email to an external client. The way in wich this will happen is the data will writen to a text file which will then be sent using email to the external client.
+
+recording used stock: The system must be able to keep track of how much stock it has left to do this is must take away stock from the system without deleting the record of the stock from the database. In order to do this every stock item has the atributes stock used and stock remaining, stock used recordes to amount of the stock that has been used either sold or by another means the stock has been used up. Stock remaining does the opersite to this it recordes the amount of stock the system still has. Almost every operation on the system will use these two atributes in one way or another.
+
+refill stock: some stock items will have an display quantity and product displayed atribute; display quantity is the maximum amount of that stock item that can be put on display. product displayed is the real amount of the product that is currently being displayed. the system will uses these atribrutes when a user refills all displayed stock at the end of a session; the system will calcutate how much of each stock is needed and print this on a list. the system will do a simular operation when a items product display reaches a certain value such as 1 or 0.
+
 \subsection{System flowcharts showing an overview of the complete system}
 
 \section{User Interface Designs}
