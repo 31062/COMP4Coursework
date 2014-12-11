@@ -5,10 +5,10 @@ with sqlite3.connect("pub_stock.db") as db:
     #make the cursor
     cursor = db.cursor()
     #create sql
-    sql = """create table Delivery(
-        DeliveryID integer,
-        DeliveryTimeDate text,
-        primary key(DeliveryID))"""
+    sql = """create table ProductType(
+        ProductTypeID integer,
+        TypeName text,
+        primary key(ProductTypeID))"""
     #execute sql code
     cursor.execute(sql)
     #commit to database

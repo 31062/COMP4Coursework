@@ -5,7 +5,7 @@ with sqlite3.connect("pub_stock.db") as db:
     #make the cursor
     cursor = db.cursor()
     #create sql
-    sql = """create table user(
+    sql = """create table User(
         UserID integer,
         UserFirstName text,
         UserLastName text,
