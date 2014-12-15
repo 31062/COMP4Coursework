@@ -10,7 +10,7 @@ with sqlite3.connect("pub_stock.db") as db:
         ProductID integer,
         TransactionsID integer,
         primary key(TransactionsProductID),
-        foreign key(TransactionsID) refernces Transactions(TransactionsID),
+        foreign key(TransactionsID) references Transactions(TransactionsID),
         foreign key(ProductID) references Product(ProductID))"""
     #execute sql code
     cursor.execute(sql)
