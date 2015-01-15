@@ -104,9 +104,29 @@ refill stock: some stock items will have an display quantity and product display
 
 \subsubsection{Entity Descriptions}
 
-userID; is used to identify each differnt user of the system so that the manegers can look through who did what on the system, we use userID to identify each user as multiple can have the same name.
+User(\underline{UserID},UserFirstName,UserLastName,UserPhoneNumber,UserEmailAddress,UserCity,UserStreet,UserHouseNo,UserPostcode)
 
-user name; is used to print the name of the user on screen as well as some documents such as recets
+Transations(\underline{TransactionsID},TransactionsTimeDate,\emph{UserID})
+
+Stockcheck(\underline{StockCheckID},StockCheckDate,QuantityFound,\emph{UserID},\emph{StockID})
+
+Stock(\underline{StockID},PuchaseUnit,PuchaseCost,ShelfLife,DisplayQuantity,QuantityOfStockDisplayed,\emph{BrandID},\emph{SupplierID})
+
+Supplier(\underline{SupplierID},SupplierName)
+
+Delivery(\underline{DeliveryID},DeliveryTimeDate)
+
+Brand(\underline{BrandID},BrandName)
+
+Product(\underline{ProductID},RetailPrice,RetailUnit,ProductName,AlcoholPercentage,\emph{ProductTypeID},\underline{LocationID},\emph{BrandID},\emph{StockID})
+
+location(\underline{LocationID},LocationName)
+
+ProductType(\underline{ProductTypeID},TypeName)
+
+TransactionsProduct(\underline{TransactionsProductID},\emph{ProductID},\emph{TransactionsID})
+
+DeliveryStock(\underline{DeliveryStockID},\emph[DeliveryID},\emph{StockID})
 
 \subsubsection{1NF to 3NF}
 
