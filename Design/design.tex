@@ -104,29 +104,29 @@ refill stock: some stock items will have an display quantity and product display
 
 \subsubsection{Entity Descriptions}
 
-User(\underline{UserID},UserFirstName,UserLastName,UserPhoneNumber,UserEmailAddress,UserCity,UserStreet,UserHouseNo,UserPostcode)
+User(\underline{UserID}, UserFirstName, UserLastName, UserPhoneNumber, UserEmailAddress, UserCity, UserStreet, UserHouseNo, UserPostcode)
 
-Transations(\underline{TransactionsID},TransactionsTimeDate,\emph{UserID})
+Transations(\underline{TransactionsID}, TransactionsTimeDate, \emph{UserID})
 
-Stockcheck(\underline{StockCheckID},StockCheckDate,QuantityFound,\emph{UserID},\emph{StockID})
+Stockcheck(\underline{StockCheckID}, StockCheckDate, QuantityFound, \emph{UserID}, \emph{StockID})
 
-Stock(\underline{StockID},PuchaseUnit,PuchaseCost,ShelfLife,DisplayQuantity,QuantityOfStockDisplayed,\emph{BrandID},\emph{SupplierID})
+Stock(\underline{StockID}, PuchaseUnit, PuchaseCost, ShelfLife, DisplayQuantity, QuantityOfStockDisplayed, \emph{BrandID}, \emph{SupplierID})
 
-Supplier(\underline{SupplierID},SupplierName)
+Supplier(\underline{SupplierID}, SupplierName)
 
-Delivery(\underline{DeliveryID},DeliveryTimeDate)
+Delivery(\underline{DeliveryID}, DeliveryTimeDate)
 
-Brand(\underline{BrandID},BrandName)
+Brand(\underline{BrandID}, BrandName)
 
-Product(\underline{ProductID},RetailPrice,RetailUnit,ProductName,AlcoholPercentage,\emph{ProductTypeID},\underline{LocationID},\emph{BrandID},\emph{StockID})
+Product(\underline{ProductID}, RetailPrice, RetailUnit, ProductName, AlcoholPercentage, \emph{ProductTypeID}, \underline{LocationID}, \emph{BrandID}, \emph{StockID})
 
-location(\underline{LocationID},LocationName)
+location(\underline{LocationID}, LocationName)
 
-ProductType(\underline{ProductTypeID},TypeName)
+ProductType(\underline{ProductTypeID}, TypeName)
 
-TransactionsProduct(\underline{TransactionsProductID},\emph{ProductID},\emph{TransactionsID})
+TransactionsProduct(\underline{TransactionsProductID}, \emph{ProductID}, \emph{TransactionsID})
 
-DeliveryStock(\underline{DeliveryStockID},\emph[DeliveryID},\emph{StockID})
+DeliveryStock(\underline{DeliveryStockID}, \emph{DeliveryID}, \emph{StockID})
 
 \subsubsection{1NF to 3NF}
 
@@ -134,9 +134,17 @@ DeliveryStock(\underline{DeliveryStockID},\emph[DeliveryID},\emph{StockID})
 
 \subsection{Security and Integrity of Data}
 
+The integrity of my data is mainly non-sensitive data as it mainly holds infomation such as contact details for diffrent companys that are avalible publicly. The system also holds data about the differnt products the pub can sell but this data is also avalibe publicly. However the database also has personal infomation about the system's users such as their national insurance number, full name, phone numbers, address. If a user has access to the system they can also descover how much profit to sytem has made during the current day. Because the database is holding sensitive infomation it must meet the requirements of the Data Protection Act 1998 in order to ensure no one can access any sensitive data with criminal intent. 
+
+The act states that sensitive data must be accurate, encripted and be protected behind a strong password which the companys data controller is responible for. To comply these standards any sensative data will be encripted with caesar code  and only users with the highest privileges will be able to access the data, but must be told the encription key by the data controller.
+
 \subsection{System Security}
 
+Each system user will have their own personal login number. To log on to the system a user must select their name from a list of users and then enter their 5 digit code this will grant them access to whatever their privileges allow, in order to change a users privelage a manager(highest privilege) must change their privileges in the system. to veiw any sensitive data on the system a user must be a manager and enter password set by the data cntroller.
+
 \section{Validation}
+
+In order to ensure that data in the system is as accurate as possible there will be exstensive vlidation when ever adding or editing data in the database. Their are three differnt ways in which the system can validate data: The first is a data type check, is the data enterd into the system in the correct data form eg. string, float, integer. the second. The second is a size check, is the data example string have the correct amount of characters in it or it the data held by a virible the correct memory size for what it should be. The third validation is does the data in the varible match what it should be, for example the the password the user enterd match the one set to grant access. This can be done by string slicing and checking certain character or digits within a float, interger or string
 
 \section{Testing}
 
