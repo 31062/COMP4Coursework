@@ -1,8 +1,6 @@
 import sqlite3
 
 def amend_user_data(data,field):
-    print("field:",field)
-    print("data;",data)
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -32,16 +30,6 @@ def amend_user_data(data,field):
         sql_8 = """update User set
             UserPostcode = ?
             where UserID = ?"""
-        sql_9 = """update User set
-            UserFirstName = ?,
-            UserLastNme = ?,
-            UserPhoneNumber = ?,
-            UserEmailAddress = ?,
-            UserCity = ?,
-            UserStreet = ?,
-            UserHouseNumber = ?,
-            UserPostcode = ?
-            where UserID = ?"""
         if field == 1:
             cursor.execute(sql_1,data)
         if field == 2:
@@ -58,8 +46,6 @@ def amend_user_data(data,field):
             cursor.execute(sql_7,data)
         if field == 8:
             cursor.execute(sql_8,data)
-        if field == 9:
-            cursor.execute(sql_9,data)
         db.commit()
 
 
@@ -76,15 +62,28 @@ def display():
     print("6. UserStreet")
     print("7. UserHouseNumber")
     print("8. UserPostcode")
-    print("9. All")
     print("")
 
-def user_input():
-    row_ID = input("row ID :")
-    field = int(input("field to edit :"))
-    value = input("new data :")
+def def user_input():
+    check = False
+    while not check:
+        try:
+            row_ID = int(input("row ID,str :"))
+            check = True
+        except ValueError:
+            print("invalid data type")
+            check = False
+    check = False
+    while not check:
+        try:
+            field = int(input("field to edit :"))
+            check = True
+        except ValueError:
+            print("invalid data type")
+            check = False
+    value = input("new data :")     
     data = (value,row_ID)
-    return field, data 
+    return field, data
 
 if __name__ == "__main__":
     display()

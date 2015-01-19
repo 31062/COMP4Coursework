@@ -56,6 +56,22 @@ refill stock: some stock items will have an display quantity and product display
 
 \subsection{Class Definitions}
 
+\begin{center}
+\begin{tabular}{|p{3cm}|}
+	\hline
+	\textbf{User} \\ \hline
+	UserID \\
+	UserFIrstName \\
+	UserLastName \\
+	UserPhoneNumber \\
+	UserEmailAddress \\
+	UserCity \\
+	UserStreet \\
+	UserHouseNo \\
+	UserPostcode \\ \hline
+	
+
+
 \section{Prototyping}
 
 \section{Definition of Data Requirements}
@@ -68,7 +84,7 @@ refill stock: some stock items will have an display quantity and product display
 
 \subsection{Data Dictionary}
 \begin{center}
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|p{2cm}|p{1cm}|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{3cm}|}
     \hline
     \textbf{Name} & \textbf{Data Type} & \textbf{Length} & \textbf{Validation} & \textbf{Example Data} & \textbf{Comment} \\ \hline
 	stock ID & int & 2 bytes & 4 digits, must exsist & 3845 & unique to each stock item\\ \hline
@@ -144,7 +160,7 @@ Each system user will have their own personal login number. To log on to the sys
 
 \section{Validation}
 
-In order to ensure that data in the system is as accurate as possible there will be exstensive vlidation when ever adding or editing data in the database. Their are three differnt ways in which the system can validate data: The first is a data type check, is the data enterd into the system in the correct data form eg. string, float, integer. the second. The second is a size check, is the data example string have the correct amount of characters in it or it the data held by a virible the correct memory size for what it should be. The third validation is does the data in the varible match what it should be, for example the the password the user enterd match the one set to grant access. This can be done by string slicing and checking certain character or digits within a float, interger or string
+In order to ensure that data in the system is as accurate as possible there will be exstensive vlidation when ever adding or editing data in the database. Their are three differnt ways in which the system can validate data: The first is a data type check, is the data enterd into the system in the correct data form eg. string, float, integer. the second. The second is a size check, is the data example string have the correct amount of characters in it or it the data held by a virible the correct memory size for what it should be. The third validation is does the data in the varible match what it should be, for example the the password the user enterd match the one set to grant access. This can be done by string slicing and checking certain character or digits within a float, interger or string.
 
 \section{Testing}
 

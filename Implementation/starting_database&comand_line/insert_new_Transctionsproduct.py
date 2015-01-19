@@ -6,11 +6,12 @@ def insert_data(values):
         #make the cursor
         cursor = db.cursor()
         #create sql
-        sql = """insert into Delivery(DeliveryTimeDate) values(?)"""
+        sql = """insert into TransactionsProduct(ProductID,TransactionsID) values(?,?)"""
         cursor.execute(sql,values)
         db.commit()
 
 if __name__ == "__main__":
-    time = input("delivery time date,str: ")
-    delivery = (time,)
-    insert_data(delivery)
+    product_id = int(input("ProductID,int :"))
+    trans_id = int(input("TransactionsID,int :"))
+    transactions_product = (trans_id,product_id)
+    insert_data(transactions_product)

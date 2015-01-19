@@ -11,6 +11,6 @@ def insert_data(values):
         db.commit()
 
 if __name__ == "__main__":
-    name = input("producttype : ")
+    name = input("producttype: ")
     type_ = (name,)
     insert_data(type_)

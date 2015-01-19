@@ -11,11 +11,12 @@ def insert_data(values):
         db.commit()
 
 if __name__ == "__main__":
-    SC_date = input("stock check date : ")
-    NSC_date = input("next stock check date : ")
-    userID = int(input("UserID : "))
-    quantity_found = int(input("quantity found : "))
+    SC_date = input("stock check date,str : ")
+    NSC_date = input("next stock check date,str : ") 
+    userID = int(input("UserID,int : "))
+    quantity_found = int(input("quantity found,int : "))
     stockID = int(input("stockID : "))
+        
     
     
     stock_check = (SC_date,NSC_date,userID,quantity_found,stockID)

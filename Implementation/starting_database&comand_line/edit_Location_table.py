@@ -6,9 +6,9 @@ def amend_user_data(data,field):
         #make the cursor
         cursor = db.cursor()
         #create sql
-        sql_1 = """update Brand 
-            set BrandName = ?
-            where BrandID = ?"""
+        sql_1 = """update Location 
+            set LocationName = ?
+            where LocationID = ?"""
         cursor.execute(sql_1,data)
         db.commit()
 
@@ -18,7 +18,7 @@ def display():
         then select which field you whish to edit or edit all fields at once, finaly enter the new value
         for the field""")
     print("")
-    print("1. BrandName")
+    print("1. LocationName")
     print("")
 
 def user_input():
@@ -40,7 +40,7 @@ def user_input():
             check = False
     value = input("new data :")     
     data = (value,row_ID)
-    return field, data 
+    return field, data
 
 if __name__ == "__main__":
     display()

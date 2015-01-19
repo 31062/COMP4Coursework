@@ -11,9 +11,7 @@ def insert_data(values):
         db.commit()
 
 if __name__ == "__main__":
-    deliveryID = int(input("deliveryID : "))
-    stockID = int(input("stockID : "))
-    
-    
+    deliveryID = int(input("deliveryID: "))
+    stockID = int(input("stockID: "))
     d_stock = (deliveryID,stockID)
     insert_data(d_stock)

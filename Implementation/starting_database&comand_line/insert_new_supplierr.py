@@ -11,6 +11,6 @@ def insert_data(values):
         db.commit()
 
 if __name__ == "__main__":
-    name = input("supplier's name: ")
+    name = input("supplier's name,str: ")
     supplier = (name,)
     insert_data(supplier)
