@@ -48,7 +48,7 @@ def comand_display_1():
 
 def comand_display_2():
     print()
-    print("select which table you wish to append to.")
+    print("select the table in which u which to insert or edit data.")
     print()
     print("1. Brand")
     print("2. Supplier")
@@ -98,7 +98,33 @@ def display_1_input():
     print() 
     return display_1_choice
 
-def editing_database(display_2_choice):
+def insert_database(display_2_choice):
+    if display_2_choice == 1:
+        insert_brand_main()
+    if display_2_choice == 2:
+        insert_supplier_main()
+    if display_2_choice == 3:
+        insert_delivery_main()
+    if display_2_choice == 4:
+        insert_location_main()
+    if display_2_choice == 5:
+        insert_product_main()
+    if display_2_choice == 6:
+        insert_producttype_main()
+    if display_2_choice == 7:
+        insert_stock_main()
+    if display_2_choice == 8:
+        insert_stockcheck_main()
+    if display_2_choice == 9:
+        insert_transactions_main()
+    if display_2_choice == 10:
+        insert_user_main()
+    if display_2_choice == 11:
+        insert_deliverystock_main()
+    if display_2_choice == 12:
+        insert_transactionsproduct_main()
+
+def edit_database(display_2_choice):
     if display_2_choice == 1:
         edit_brand_main()
     if display_2_choice == 2:
@@ -141,7 +167,8 @@ def create_database():
     create_product_table()
     create_transactionsproduct_table()
     
-    
+def end_program():
+    quit()
 
 def comand_main():
     comand_display_1()
@@ -149,18 +176,21 @@ def comand_main():
     if display_1_choice == 1:
         create_database()
         print("your data base has been created and named:pub_stock")
-    if display_1_choice == 2:
+    if display_1_choice == 3:
         comand_display_2()
         display_2_choice = display_2_input()
         edit_database(display_2_choice)
-        
-        
-        
+    if display_1_choice == 2:
+        comand_display_2()
+        display_2_choice = display_2_input()
+        insert_database(display_2_choice)
+    if display_1_choice == 4:
+        end_program()
 
 if __name__=="__main__":
     repeat = True
     while repeat:
-        comand_main()
+        comand_main() 
     
 
 

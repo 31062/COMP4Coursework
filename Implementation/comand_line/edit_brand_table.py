@@ -1,6 +1,6 @@
 import sqlite3
 
-def edit_user_data(data,field):
+def edit_brand_data(data,field):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -13,7 +13,7 @@ def edit_user_data(data,field):
         db.commit()
 
 
-def edit_user_display():
+def edit_brand_display():
     print("""please first enter the ID number of the row you wish to edit
         then select which field you whish to edit or edit all fields at once, finaly enter the new value
         for the field""")
@@ -21,7 +21,7 @@ def edit_user_display():
     print("1. BrandName")
     print("")
 
-def edit_user_input():
+def edit_brand_input():
     check = False
     while not check:
         try:
@@ -42,11 +42,11 @@ def edit_user_input():
     data = (value,row_ID)
     return field, data 
 
-def main():
-    edit_user_display()
-    field, data = edit_user_input()
-    edit_user_data(data,field)
+def edit_brand_main():
+    edit_brand_display()
+    field, data = edit_brand_input()
+    edit_brand_data(data,field)
 
 if __name__ == "__main__":
-    main()
+    edit_brand_main()
     

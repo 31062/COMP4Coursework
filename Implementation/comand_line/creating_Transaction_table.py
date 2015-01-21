@@ -1,6 +1,6 @@
 import sqlite3
 
-def create_transactons_table():
+def create_transactions_table():
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
