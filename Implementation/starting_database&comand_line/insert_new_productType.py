@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_producttype_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,7 +10,11 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
-    name = input("producttype: ")
+def insert_producttype_main():
+    name = input("producttype : ")
     type_ = (name,)
-    insert_data(type_)
+    insert_producttype_data(type_)
+
+if __name__ == "__main__":
+    insert_producttype_main()
+    

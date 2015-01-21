@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_location_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,7 +10,11 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
-    location_name = input("locationName: ")
+def insert_location_main():
+    location_name = input("locationName : ")
     location = (location_name)
-    insert_data(location)
+    insert_location_data(location)
+
+if __name__ == "__main__":
+    insert_location_main()
+    

@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_transactions_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,8 +10,19 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
+def insert_transactions_main():
     trans_time_date = input("TransactionsTimeDate,str :")
-    user_id = int(input("UserID,int :"))
+    check = False
+    while not check:
+        try:
+            user_id = int(input("UserID,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
     transactions = (trans_time_date,user_id)
-    insert_data(transactions)
+    insert_transactions_data(transactions)
+
+if __name__ == "__main__":
+    insert_transactions_main()
+    

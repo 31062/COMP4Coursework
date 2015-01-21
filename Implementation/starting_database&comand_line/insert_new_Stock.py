@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_stock_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,14 +10,52 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
+def insert_stock_main():
     p_unit = input("PuchaseUnit,str :")
-    p_cost = float(input("PuchaseCost,float :"))
+    check = False
+    while not check:
+        try:
+            p_cost = int(input("PuchaseCost,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
     SL = input("ShelfLife,str :")
-    dis_quan = int(input("DisplayQuantity,int :"))
-    quan_of_stock_dis = int(input("QuantityOfStockDisplayed,int :"))
-    brandID = int(input("BrandID,int :"))
-    supplierID = int(input("SupplierID,int :"))
-    check = isinstance(supplierID,int)
+    check = False
+    while not check:
+        try:
+            dis_quan = int(input("DisplayQuantity,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
+    check = False
+    while not check:
+        try:
+            quan_of_stock_dis = int(input("QuantityOfStockDisplayed,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
+    check = False
+    while not check:
+        try:
+            brandID = int(input("BrandID,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
+    check = False
+    while not check:
+        try:
+            supplierID = int(input("SupplierID,int :"))
+            check = True
+        except ValueError:
+            print("datatype error")
+            check = False
     product = (p_unit,p_cost,SL,dis_quan,quan_of_stock_dis,brandID,supplierID)
-    insert_data(product)
+    insert_stock_data(product)
+
+if __name__ == "__main__":
+    insert_stock_main()
+    

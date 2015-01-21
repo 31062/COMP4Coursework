@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_brand_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,7 +10,11 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
+def insert_brand_main():
     name = input("brand name: ")
     brand = (name,)
-    insert_data(brand)
+    insert_brand_data(brand)
+
+if __name__ == "__main__":
+    insert_brand_main()
+    

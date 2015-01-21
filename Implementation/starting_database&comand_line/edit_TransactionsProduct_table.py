@@ -1,6 +1,6 @@
 import sqlite3
 
-def amend_user_data(data,field):
+def edit_transactionsproduct_data(data,field):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -19,7 +19,7 @@ def amend_user_data(data,field):
         db.commit()
 
 
-def display():
+def edit_transactionsproduct_display():
     print("""please first enter the ID number of the row you wish to edit
         then select which field you whish to edit or edit all fields at once, finaly enter the new value
         for the field""")
@@ -28,11 +28,11 @@ def display():
     print("2. TransactionsID")
     print("")
 
-def user_input():
+def edit_transactionsproduct_input():
     check = False
     while not check:
         try:
-            row_ID = int(input("row ID,str :"))
+            row_ID = int(input("row ID :"))
             check = True
         except ValueError:
             print("invalid data type")
@@ -47,10 +47,14 @@ def user_input():
             check = False
     value = input("new data :")     
     data = (value,row_ID)
-    return field, data 
+    return field, data
+
+def edit_transactionsproduct_main():
+    edit_transactionsproduct_display()
+    field, data = edit_transactionsproduct_input()
+    edit_transactionsproduct_data(data,field)
 
 if __name__ == "__main__":
-    display()
-    field, data = user_input()
-    amend_user_data(data,field)
+    edit_transactionsproduct_main()
+    
     

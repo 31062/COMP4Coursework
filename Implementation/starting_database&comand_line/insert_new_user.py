@@ -1,6 +1,6 @@
 import sqlite3
 
-def insert_data(values):
+def insert_user_data(values):
     #open/create new database
     with sqlite3.connect("pub_stock.db") as db:
         #make the cursor
@@ -10,7 +10,7 @@ def insert_data(values):
         cursor.execute(sql,values)
         db.commit()
 
-if __name__ == "__main__":
+def insert_user_main():
     f_name = input("first name,str: ")
     l_name = input("last name,str: ")
     phone_number = input("phone number,str: ")
@@ -20,4 +20,8 @@ if __name__ == "__main__":
     house_no = input("house_no,str: ")
     postcode = input("postcode,str: ")
     name = (f_name,l_name,phone_number,email,city,street,house_no,postcode)
-    insert_data(name)
+    insert_user_data(name)
+
+if __name__ == "__main__":
+    insert_user_main()
+    
