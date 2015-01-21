@@ -6,16 +6,22 @@ def insert_stockcheck_data(values):
         #make the cursor
         cursor = db.cursor()
         #create sql
-        sql = """insert into StockCheck(StockCheckDate,NextStockCheckDate,QuantityFound,UserID,StockID) values(?,?,?,?,?)"""
+        sql = """insert into StockCheck(StockCheckDate,NextStockCheckDate,QuantityFound,UserID,StockID) values(?,?,?,?,?)"""        
         cursor.execute(sql,values)
         db.commit()
 
 def insert_stockcheck_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select UserID,UserFirstName,UserLastName from User")
+        user = cursor.fetchall()
+        cursor.execute("select StockID,
     SC_date = input("stock check date,str : ")
     NSC_date = input("next stock check date,str : ")
     check = False
     while not check:
         try:
+            print(user)
             userID = int(input("UserID,int : "))
             check = True
         except ValueError:

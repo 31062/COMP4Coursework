@@ -8,13 +8,13 @@ def create_stockcheck_table():
         #create sql
         sql = """create table StockCheck(
             StockCheckID integer,
-            StockCheckDate text
+            StockCheckDate text,
             NextStockCheckDate text,
             QuantityFound integer,
             UserID integer,
             StockID integer,
-            primary key(StockCheckID)
-            foreign key(UserID) references User(UserID)
+            primary key(StockCheckID),
+            foreign key(UserID) references User(UserID),
             foreign key(StockID) references Stock(StockID))"""
         #execute sql code
         cursor.execute(sql)

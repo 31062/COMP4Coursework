@@ -12,7 +12,7 @@ def insert_location_data(values):
 
 def insert_location_main():
     location_name = input("locationName : ")
-    location = (location_name)
+    location = (location_name,)
     insert_location_data(location)
 
 if __name__ == "__main__":
