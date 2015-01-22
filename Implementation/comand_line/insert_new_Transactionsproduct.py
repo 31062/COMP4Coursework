@@ -11,9 +11,16 @@ def insert_transactionsproduct_data(values):
         db.commit()
 
 def insert_transactionsproduct_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select ProductID,ProductName from Product")
+        product = cursor.fetchall()
+        cursor.execute("select TransactionsID,TransactionsTimeDate,UserID from Transactions")
+        trans = cursor.fetchall()
     check = False
     while not check:
         try:
+            print(product)
             product_id = int(input("ProductID,int :"))
             check = True
         except ValueError:
@@ -22,6 +29,7 @@ def insert_transactionsproduct_main():
     check = False
     while not check:
         try:
+            print(trans)
             trans_id = int(input("TransactionsID,int :"))
             check = True
         except ValueError:

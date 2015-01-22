@@ -11,9 +11,16 @@ def insert_deliverystock_data(values):
         db.commit()
 
 def insert_deliverystock_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select DeliveryID,DeliveryTimeDate from Delivery")
+        delivery = cursor.fetchall()
+        cursor.execute("select StockID from Stock")
+        stock = cursor.fetchall()
     check = False
     while not check:
         try:
+            print(delivery)
             deliveryID = int(input("deliveryID: "))
             check = True
         except ValueError:
@@ -22,6 +29,7 @@ def insert_deliverystock_main():
     check = False
     while not check:
         try:
+            print(stock)
             stockID = int(input("stockID: "))
             check = True
         except ValueError:

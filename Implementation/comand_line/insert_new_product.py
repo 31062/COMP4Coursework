@@ -11,6 +11,17 @@ def insert_product_data(values):
         db.commit()
 
 def insert_product_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select ProductTypeID,TypeName from ProductType")
+        producttype = cursor.fetchall()
+        cursor.execute("select LocationID,LocationName from Location")
+        location = cursor.fetchall()
+        cursor.execute("select BrandID,BrandName from Brand")
+        brand = cursor.fetchall()
+        cursor.execute("select StockID from Stock")
+        stock = cursor.fetchall()
+        
     check = False
     while not check:
         try:
@@ -32,6 +43,7 @@ def insert_product_main():
     check = False
     while not check:
         try:
+            print(producttype)
             product_typeID = int(input("product_typeID,int :"))
             check = True
         except ValueError:
@@ -40,6 +52,7 @@ def insert_product_main():
     check = False
     while not check:
         try:
+            print(location)
             locationID = int(input("locationID,int :"))
             check = True
         except ValueError:
@@ -48,6 +61,7 @@ def insert_product_main():
     check = False
     while not check:
         try:
+            print(brand)
             brandID = int(input("brandID,int :"))
             check = True
         except ValueError:
@@ -56,6 +70,7 @@ def insert_product_main():
     check = False
     while not check:
         try:
+            print(stock)
             stockID = int(input("stockID,int :"))
             check = True
         except ValueError:

@@ -11,10 +11,15 @@ def insert_transactions_data(values):
         db.commit()
 
 def insert_transactions_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select UserID,UserFirstName,UserLastName from User")
+        user = cursor.fetchall()
     trans_time_date = input("TransactionsTimeDate,str :")
     check = False
     while not check:
         try:
+            print(user)
             user_id = int(input("UserID,int :"))
             check = True
         except ValueError:

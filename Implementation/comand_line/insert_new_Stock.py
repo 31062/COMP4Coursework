@@ -11,6 +11,12 @@ def insert_stock_data(values):
         db.commit()
 
 def insert_stock_main():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select BrandID,BrandName from Brand")
+        brand = cursor.fetchall()
+        cursor.execute("select SupplierID,SupplierID from Supplier")
+        supplier = cursor.fetchall()
     p_unit = input("PuchaseUnit,str :")
     check = False
     while not check:
@@ -40,6 +46,7 @@ def insert_stock_main():
     check = False
     while not check:
         try:
+            print(brand)
             brandID = int(input("BrandID,int :"))
             check = True
         except ValueError:
@@ -48,6 +55,7 @@ def insert_stock_main():
     check = False
     while not check:
         try:
+            print(supplier)
             supplierID = int(input("SupplierID,int :"))
             check = True
         except ValueError:
