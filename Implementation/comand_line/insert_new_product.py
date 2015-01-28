@@ -43,7 +43,11 @@ def insert_product_main():
     check = False
     while not check:
         try:
-            print(producttype)
+            print()
+            print("{0:<6}{1:<10}".format("ID", "type name"))
+            for each_1 in producttype:
+                print("{0:<6}{1:<10}".format(each_1[0], each_1[1]))
+            print()
             product_typeID = int(input("product_typeID,int :"))
             check = True
         except ValueError:
@@ -52,7 +56,11 @@ def insert_product_main():
     check = False
     while not check:
         try:
-            print(location)
+            print()
+            print("{0:<6}{1:<10}".format("ID", "location name"))
+            for each_2 in location:
+                print("{0:<6}{1:<10}".format(each_2[0], each_2[1]))
+            print()
             locationID = int(input("locationID,int :"))
             check = True
         except ValueError:
@@ -61,7 +69,11 @@ def insert_product_main():
     check = False
     while not check:
         try:
-            print(brand)
+            print()
+            print("{0:<6}{1:<10}".format("ID", "brand name"))
+            for each_3 in brand:
+                print("{0:<6}{1:<10}".format(each_3[0], each_3[1]))
+            print()
             brandID = int(input("brandID,int :"))
             check = True
         except ValueError:
@@ -70,7 +82,11 @@ def insert_product_main():
     check = False
     while not check:
         try:
-            print(stock)
+            print()
+            print("{0:<6}".format("ID"))
+            for each_4 in stock:
+                print("{0:<6}".format(each_4[0]))
+            print()
             stockID = int(input("stockID,int :"))
             check = True
         except ValueError:

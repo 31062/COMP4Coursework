@@ -20,7 +20,10 @@ def insert_deliverystock_main():
     check = False
     while not check:
         try:
-            print(delivery)
+            print("{0:<6}".format("ID"))
+            for each in delivery:
+                print("{0:<6}".format(each[0]))
+            print()
             deliveryID = int(input("deliveryID: "))
             check = True
         except ValueError:
@@ -29,7 +32,11 @@ def insert_deliverystock_main():
     check = False
     while not check:
         try:
-            print(stock)
+            print()
+            print("{0:<6}".format("ID"))
+            for each_1 in stock:
+                print("{0:<6}".format(each_1[0]))
+            print()
             stockID = int(input("stockID: "))
             check = True
         except ValueError:

@@ -43,7 +43,8 @@ def comand_display_1():
     print("1. create new database.")
     print("2. insert a new line in a database table.")
     print("3. edit a currenlty exsisting line/field in the database.")
-    print("4. exit comand line.")
+    print("4. make transaction.")
+    print("0. exit program.")
     print()
 
 def comand_display_2():
@@ -87,7 +88,7 @@ def display_1_input():
     while not check:
         try:
             display_1_choice = int(input("input :"))
-            if display_1_choice in [1,2,3,4,5]:
+            if display_1_choice in [0,1,2,3,4,5]:
                 check = True
             else:
                 print("index out of range")
@@ -170,6 +171,9 @@ def create_database():
 def end_program():
     quit()
 
+def transaction():
+    
+
 def comand_main():
     comand_display_1()
     display_1_choice = display_1_input()
@@ -184,8 +188,10 @@ def comand_main():
         comand_display_2()
         display_2_choice = display_2_input()
         insert_database(display_2_choice)
-    if display_1_choice == 4:
+    if display_1_choice == 0:
         end_program()
+    if display_1_choice == 4:
+        transaction()
 
 if __name__=="__main__":
     repeat = True

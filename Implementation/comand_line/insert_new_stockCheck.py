@@ -17,15 +17,15 @@ def insert_stockcheck_main():
         user = cursor.fetchall()
         cursor.execute("select StockID from Stock")
         stock = cursor.fetchall()
-    #SC_date = input("stock check date,str : ")
-    #NSC_date = input("next stock check date,str : ")
+    SC_date = input("stock check date,str : ")
+    NSC_date = input("next stock check date,str : ")
     check = False
     while not check:
         try:
+            print("{0:<6}{1:<10}{2:>15}".format("ID", "first name", "last name"))
             for each in user:
-                print(each)
-                print("{0}  {1}  {2}".format("ID", "first name", "last name"))
-                print("{0}" "{1}" "{2}".format(each[0], each[1], each[2]))
+                print("{0:<6}{1:<10}{2:>10}".format(each[0], each[1], each[2]))
+            print()
             userID = int(input("UserID,int : "))
             check = True
         except ValueError:
@@ -42,8 +42,11 @@ def insert_stockcheck_main():
     check = False
     while not check:
         try:
+            print()
+            print("{0:<6}".format("ID"))
             for each_1 in stock:
-                print(each_1)
+                print("{0:<6}".format(each_1[0]))
+            print()
             stockID = int(input("stockID : "))
             check = True
         except ValueError:
