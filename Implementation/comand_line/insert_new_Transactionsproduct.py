@@ -1,4 +1,5 @@
 import sqlite3
+import datetime
 
 def insert_transactionsproduct_data(values):
     #open/create new database
