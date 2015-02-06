@@ -46,8 +46,12 @@ def insert_stock_main():
     check = False
     while not check:
         try:
-            print(brand)
+            print('{0:<6}{1:<10}'.format('ID','brand name'))
+            for each1 in brand:
+                print('{0:<6}{1:<10}'.format(each1[0],each1[1]))
+            print()
             brandID = int(input("BrandID,int :"))
+            print()
             check = True
         except ValueError:
             print("datatype error")
@@ -55,8 +59,12 @@ def insert_stock_main():
     check = False
     while not check:
         try:
-            print(supplier)
+            print('{0:<6}{1:<10}'.format('ID','supplier name'))
+            for each2 in supplier:
+                print('{0:<6}{1:<10}'.format(each1[0],each1[1]))
+            print()
             supplierID = int(input("SupplierID,int :"))
+            print()
             check = True
         except ValueError:
             print("datatype error")

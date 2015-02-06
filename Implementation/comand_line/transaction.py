@@ -53,23 +53,19 @@ def transaction_insert_transactionproduct(productID_list):
             cursor.execute("select max(TransactionsID) from transactions")
             transaction_id = cursor.fetchall()
             transaction_id = (transaction_id[0])
-            
     check = True
     point = len(productID_list)
     pointer = 0
-    while check:
+    for count in productID_list:
         product_ID = productID_list[pointer]
-        values = (product_ID,transaction_id)
-        print(product_ID,transaction_id)
+        values = (product_ID,transaction_id[0])
+        print(product_ID,transaction_id[0])
         with sqlite3.connect("pub_stock.db") as db:
             cursor = db.cursor()
             sql = """insert into TransactionsProduct(ProductID,TransactionsID) values(?,?)"""
             cursor.execute(sql,values)
             db.commit()
-    pointer += 1
-    point -= 1
-    if point == 0:
-        check = False
+        pointer += 1
     
 def transaction_main():
     print("----TRANSACTION----")

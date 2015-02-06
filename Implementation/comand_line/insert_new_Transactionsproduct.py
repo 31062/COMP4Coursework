@@ -21,7 +21,10 @@ def insert_transactionsproduct_main():
     check = False
     while not check:
         try:
-            print(product)
+            print("{0:<6}".format("ID"))
+            for each1 in product:
+                print("{0:<6}".format(each1[0]))
+            print()
             product_id = int(input("ProductID,int :"))
             check = True
         except ValueError:
@@ -30,7 +33,10 @@ def insert_transactionsproduct_main():
     check = False
     while not check:
         try:
-            print(trans)
+            print("{0:<6}".format("ID"))
+            for each in trans:
+                print("{0:<6}".format(each[0]))
+            print()
             trans_id = int(input("TransactionsID,int :"))
             check = True
         except ValueError:
