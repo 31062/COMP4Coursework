@@ -15,8 +15,16 @@ def edit_location_data(data,field):
 
 def edit_location_display():
     print("""please first enter the ID number of the row you wish to edit
-        then select which field you whish to edit or edit all fields at once, finaly enter the new value
-        for the field""")
+then select which field you whish to edit or edit all fields at once,
+finaly enter the new value for the field.""")
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select LocationID,LocationName from Location")
+        location = cursor.fetchall()
+        print()
+    print('{0:<6}{1:<10}'.format('ID','location name'))
+    for each1 in location:
+        print('{0:<6}{1:<10}'.format(each1[0],each1[1])) 
     print("")
     print("1. LocationName")
     print("")

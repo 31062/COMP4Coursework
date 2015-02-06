@@ -20,9 +20,17 @@ def edit_deliverystock_data(data,field):
 
 
 def edit_deliverystock_display():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select DeliveryStockID,DeliveryID,StockID from DeliveryStock")
+        ds = cursor.fetchall()
     print("""please first enter the ID number of the row you wish to edit
-        then select which field you whish to edit or edit all fields at once, finaly enter the new value
-        for the field""")
+then select which field you whish to edit or edit all fields at once,
+finaly enter the new value for the field.""")
+    print()
+    print('{0:<6}{1:<10}{2:>12}'.format('ID','Delivery ID','stock ID'))
+    for each1 in ds:
+        print('{0:<6}{1:<10}{2:>6}'.format(each1[0],each1[1],each1[2]))
     print("")
     print("1. DeliveryID")
     print("2. StockID")

@@ -50,9 +50,17 @@ def edit_product_data(data,field):
 
 
 def edit_product_display():
+    with sqlite3.connect("pub_stock.db") as db:
+        cursor = db.cursor()
+        cursor.execute("select ProductID,RetailPrice,RetailUnit,ProductName,AlcoholPercentage,ProductTypeID,LocationID,BrandID,StockID from Product")
+        product = cursor.fetchall()
     print("""please first enter the ID number of the row you wish to edit
-        then select which field you whish to edit or edit all fields at once, finaly enter the new value
-        for the field""")
+then select which field you whish to edit or edit all fields at once,
+finaly enter the new value for the field.""")
+    print()
+    print('{0:<6}{1:<10}'.format('ID','RetailPrice','RetailUnit','ProductName','AlcoholPercentage','ProductTypeID','LocationID','BrandID','StockID'))
+    for each1 in product:
+        print('{0:<6}{1:<10}'.format(each1[0],each1[1]))
     print("")
     print("1. RetailPrice")
     print("2. RetailUnit")
