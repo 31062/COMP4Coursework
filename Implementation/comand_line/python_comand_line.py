@@ -35,6 +35,7 @@ from creating_supplier_table import *
 from creating_Transaction_table import *
 from creating_TransactionsProduct_table import *
 from creating_user_table import *
+from transaction import *
 
 def comand_display_1():
     print()
@@ -170,10 +171,7 @@ def create_database():
     
 def end_program():
     quit()
-
-def transaction():
     
-
 def comand_main():
     comand_display_1()
     display_1_choice = display_1_input()
@@ -191,7 +189,7 @@ def comand_main():
     if display_1_choice == 0:
         end_program()
     if display_1_choice == 4:
-        transaction()
+        transaction_main()
 
 if __name__=="__main__":
     repeat = True

@@ -15,10 +15,10 @@ def transaction_user():
 def transaction_product():
     with sqlite3.connect("pub_stock.db") as db:
         cursor = db.cursor()
-        sql = """select ProductID,ProductName from Product """
+        sql = """select ProductID,ProductName,RetailPrice from Product """
         cursor.execute(sql)
         product = cursor.fetchall()
-    print("ID   product name")
+    print("ID   product name   price")
     for each in product:
         print(each)
     print()
@@ -36,7 +36,7 @@ def transaction_product():
         except ValueError:
             print("datatype error")
             check_2 = True
-    return productID_list
+    return productID_list, product
 
 def transaction_insert_transaction(user_ID):
     time_stamp = datetime.datetime.now()
@@ -59,18 +59,34 @@ def transaction_insert_transactionproduct(productID_list):
     for count in productID_list:
         product_ID = productID_list[pointer]
         values = (product_ID,transaction_id[0])
-        print(product_ID,transaction_id[0])
         with sqlite3.connect("pub_stock.db") as db:
             cursor = db.cursor()
             sql = """insert into TransactionsProduct(ProductID,TransactionsID) values(?,?)"""
             cursor.execute(sql,values)
             db.commit()
         pointer += 1
+
+def payment(product,productID_list):
+    b_products_list = []
+    price_list = product[2]
+    count = 0
+    for each in productID_list:
+        value = productID_list[count]
+        count += 1
+        temp = product[value-1][2]
+        b_products_list.append(temp)
+    cost = 0
+    for each1 in b_products_list:
+        print(cost)
+        print(b_products_list[each1-1])
+        cost += b_products_list[each1-1] 
+        
     
 def transaction_main():
     print("----TRANSACTION----")
     user_ID = transaction_user()
-    productID_list = transaction_product()
+    productID_list, product = transaction_product()
+    payment(product,productID_list)
     transaction_insert_transaction(user_ID)
     transaction_insert_transactionproduct(productID_list)
     print("----TRANSACTION_COMPLETE----")
