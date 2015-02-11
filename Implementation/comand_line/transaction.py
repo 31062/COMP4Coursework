@@ -8,7 +8,7 @@ def transaction_user():
     print("ID  firstname  lastname")
     for each in user:
         print(each)
-    user_ID = input("Please enter your userID.")
+    user_ID = int(input("Please enter your userID."))
     print()
     return user_ID
 
@@ -31,8 +31,13 @@ def transaction_product():
             if productID == 0:
                 check_2 = False
             else:
-                productID_list.append(productID)
                 check_2 = True
+                if productID <= product[-1][0] and productID > 0:
+                    productID_list.append(productID)
+                else:
+                    print("""The product ID number you enterd was not valid,
+please enter a valid ID number from the list above""")
+                    print()
         except ValueError:
             print("datatype error")
             check_2 = True
@@ -68,22 +73,22 @@ def transaction_insert_transactionproduct(productID_list):
 
 def payment(product,productID_list):
     b_products_list = []
-    price_list = product[2]
-    count = 0
     for each in productID_list:
-        value = productID_list[count]
-        count += 1
-        temp = product[value-1][2]
-        b_products_list.append(temp)
+        temp = product[each-1][2]
+        b_products_list.append(temp)  
     cost = 0
+    count2 = 0
+    each1 = 0
     for each1 in b_products_list:
-        print(cost)
-        print(b_products_list[each1-1])
-        cost += b_products_list[each1-1] 
+        temp = b_products_list[count2]
+        cost += temp
+        count2 += 1
+        print()
+        print("transaction cost:{0}{1}".format("£",cost))
         
     
 def transaction_main():
-    print("----TRANSACTION----")
+    print("--------TRANSACTION--------")
     user_ID = transaction_user()
     productID_list, product = transaction_product()
     payment(product,productID_list)
