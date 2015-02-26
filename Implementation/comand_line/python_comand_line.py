@@ -36,6 +36,7 @@ from creating_Transaction_table import *
 from creating_TransactionsProduct_table import *
 from creating_user_table import *
 from transaction import *
+from delete import *
 
 def comand_display_1():
     print()
@@ -45,6 +46,7 @@ def comand_display_1():
     print("2. Insert a new line in a database table.")
     print("3. Edit a currenlty exsisting line in the database.")
     print("4. Make transaction.")
+    print("5. Delete line from database.")
     print("0. Exit program.")
     print()
 
@@ -190,6 +192,8 @@ def comand_main():
         end_program()
     if display_1_choice == 4:
         transaction_main()
+    if display_1_choice == 5:
+        delete_main()
 
 if __name__=="__main__":
     repeat = True

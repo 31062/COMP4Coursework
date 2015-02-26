@@ -11,6 +11,8 @@ def insert_stockcheck_data(values):
         db.commit()
 
 def insert_stockcheck_main():
+    stockID_list = []
+    quantity_list = []
     with sqlite3.connect("pub_stock.db") as db:
         cursor = db.cursor()
         cursor.execute("select UserID,UserFirstName,UserLastName from User")
@@ -31,29 +33,39 @@ def insert_stockcheck_main():
         except ValueError:
             print("datatype error")
             check = False
-    check = False
-    while not check:
-        try:
-            quantity_found = int(input("quantity found,int : "))
-            check = True
-        except ValueError:
-            print("datatype error")
-            check = False
-    check = False
-    while not check:
-        try:
-            print()
-            print("{0:<6}".format("ID"))
-            for each_1 in stock:
-                print("{0:<6}".format(each_1[0]))
-            print()
-            stockID = int(input("stockID : "))
-            check = True
-        except ValueError:
-            print("datatype error")
-            check = False
-    stock_check = (SC_date,NSC_date,userID,quantity_found,stockID)
-    insert_stockcheck_data(stock_check)
+    again = True
+    while again:
+        check = False
+        while not check:
+            try:
+                print()
+                print("{0:<6}".format("ID"))
+                for each_1 in stock:
+                    print("{0:<6}".format(each_1[0]))
+                print()
+                stockID = int(input("stockID : "))
+                stockID_list.append(stockID)
+                check = True
+            except ValueError:
+                print("datatype error")
+                check = False
+        check = False
+        while not check:
+            try:
+                quantity_found = int(input("quantity found,int : "))
+                quantity_list.append(quantity_found)
+                check = True
+            except ValueError:
+                print("datatype error")
+                check = False
+        temp = input("do u whish to add anougher stock item to this stock check;yes or no:")
+        if temp not in ["y","Y","yes","Yes","YES"]:
+            again = False
+    count = 0
+    for each in stockID_list:
+        stock_check = (SC_date,NSC_date,userID,quantity_list[count],stockID_list[count])
+        insert_stockcheck_data(stock_check)
+        count += 1
 
 if __name__ == "__main__":
     insert_stockcheck_main()
