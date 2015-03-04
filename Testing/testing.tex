@@ -3,50 +3,97 @@
 \section{Test Plan}
 
 \begin{landscape}
-\subsection{Original Outline Plan}
+
+\subsection{Outline Plan}
 
 \begin{center}
     \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\  \hline
+<<<<<<< HEAD
         1.1 & to test the main menu functions proberly  & black bock testing & the use will only enter one valur into this menu and this part of the system only directs the user to a sub menu there is no real precessing thus it is best to test with what output the system gives \\ \hline
 1.2 &to test the "insert new line into database" menu & white box testing & i will use white box testing as there are multiple ways the user can get to the end of this sub menu via any of the 12 options.\\ \hline
 1.3 & to test the "edit currenlty exsisting line in database" menu & white box testing & i will use white box testing 12 differnt initial options which then can have a munber of secondery options. this plart of the program also gives no prompt that the database has been changed so black box testing it not an option. \\ \hline
 1.4 & to test "make transation" menu & black box testing & this part of the system can have many differnt roots to get through it but these option are only minor such as a differnt user or stock item. \\ \hline
 1.5 & to test "delete line from database" menu & black box testing & this part of the system is very easy to tell if it is working properly because it has a lot of output steaments therefore black box testing is ok to use \\ \hline
+=======
+        1.1 & to test the main menu functions properly  & black bock testing & the use will only enter one value into this menu and this part of the system only directs the user to a sub menu there is no real precessing thus it is best to test with what output the system gives \\ \hline
+1.2 &to test the "insert new line into database" menu & black box & i am only testing is the system starts a process rather than testing a complex algorithm\\ \hline
+1.3 & to test the "edit currently existing line in database" menu & black box &  i am only testing is the system starts a process rather than testing a complex algorithm. \\ \hline
+1.4 & to test "make transaction" menu & black box testing & this part of the system can have many different roots to get through it but these option are only minor such as a different user or stock item. \\ \hline
+1.5 & to test "delete line from database" menu & black box testing & this part of the system is very easy to tell if it is working properly because it has a lot of output statements therefore black box testing is okay to use \\ \hline
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
     \end{tabular}
 \end{center}
 
+<<<<<<< HEAD
 \subsection{Changes to Outline Plan}
 
 \subsection{Original Detailed Plan}
+=======
+\subsection{Detailed Plan}
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
 
 \begin{center}
     \begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
+<<<<<<< HEAD
        1.1.1 & to test the funtionalty of the "create new database" option is correct when no database exsists & i will load the program i will then enter 1 into the system to create a new database. & 1 & normal & the program will create a database and state this on screen &system created a new database called pub_stock.db & Example \\ \hline
 1.1.2 & to test the funtionalty of the "create new database" option is correct when there is an exsisting database  &  i will load the program i will then enter 1 into the system to create a new database & 1 & normal &the program will crash due to a database called pub_stock already exsists & the system opens the current database and trys to create a new table with the same name of an exsisting table this then crashes the program & \\ \hline
 1.1.2 & to test "insert new line in database"functionalty is correct & i will enter the value 2 into the main menu screen
 
     \end{longtable}
 \end{center}
+=======
+       1.1.1 & to test the functionality of the "create new database" option is correct when no database exsists & i will load the program i will then enter 1 into the system to create a new database. & 1 & normal/boundary & the program will create a database and state this on screen &system created a new database called pub_stock.db & Example & N/A \\ \hline
+1.1.2 & to test the functionality of the "create new database" option is correct when there is an existing database  &  i will load the program i will then enter 1 into the system to create a new database & 1 & normal/boundary &the program will crash due to a database called pub_stock already exists & the system opens the current database and trys to create a new table with the same name of an existing table this then crashes the program & N/A \\ \hline
+1.1.3 & to test "insert new line in database" option functionality is correct & i will enter the value 2 into the main menu screen to insert a new line in the database & 2 & normal/boundary & the system will display the select table menu & the system displays the select table menu  & N/A \\ \hline
+ 1.1.4 & to test the functionality of the "edit existing line in database" option functionality is correct & i will enter the value 3 into the main menu & 3 & normal/boundary & the system will display the select table menu & the system displays the select table menu  & N/A \\ \hline
+1.1.5 & to test the functionality of the "make transaction" option functionality is correct & i will enter the value 4 into the main menu & 4 & normal/boundary & the system will go to the start of the make transaction process & the system starts the make transaction process  & N/A \\ \hline
+1.1.6 & to test if the main menu has validation again erroneous values being entered & i will enter erroneous values into the main menu & g,23,-3 & erroneous & the system will get the user to re-enter a value with a prompt to why the previous value was not valid & the system gets the user to re-enter a value with a prompt to why the previous value was not valid  & N/A \\ \hline
+1.1.7 & to test the "exit program" option functions correctly & i will enter the value 0 into the main menu & 4 & normal/boundary & the program will exit & the program displays a text box to make sure you are sure you wish to exit the program if user selects ok the program closes. if user choses cancel the program ends but the window stays open  & N/A \\ \hline
+>>>>>>> branch 'master' of https://github.com/31062/COMP4Coursework.git
 
-\subsection{Changes to Detailed Plan}
+1.2.1 & to test the functionality of the "brand" option in the insert new line into database menu & i will enter 1 into the insert line into database menu  & 1 & normal/boundary & system starts insert new brand process & system starts insert new brand process & N/A \\ \hline
+1.2.2 & to test the functionality of the "product" option in the insert new line into database menu & i will enter 5 into the insert line into database menu & 5 & normal/boundary & system starts insert new product process & system starts insert new product process & N/A \\ \hline
+1.2.3 & to test the functionality of the "user" option in the insert new line into database menu & i will enter 10 into the insert line into database menu & 10 & normal/boundary & system starts insert new user process & system starts insert new user process & N/A \\ \hline
+1.2.4 & to test the functionality of the "stock" option in the insert new line into database menu & i will enter 7 into the insert line into database menu & 7 & normal/boundary & system starts insert new stock process & system starts insert new stock process & N/A \\ \hline
+1.2.5 & to test the functionality of the "location" option in the insert new line into database menu & i will enter 4 into the insert line into database menu & 4 & normal/boundary & system starts insert new location process & system starts insert new location process & N/A \\ \hline
+1.2.6 & to test the functionality of the "transactions" option in the insert new line into database menu & i will enter 9 into the insert line into database menu & 9 & normal/boundary & system starts insert new transactions process & system starts insert new transactions process & N/A \\ \hline
+1.2.7 & to test the functionality of the validation in the insert line in database & i will enter erroneous into the insert line into database menu & 0,16,-6 & erroneous/boundary & system gets user to re-enter invalid data, also gives prompt to why data is invalid & system gets user to re-enter invalid data, also gives prompt to why data is invalid & N/A \\ \hline
 
-\begin{center}
-    \begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
-        \hline
-        \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
-        Example & Example & Example & Example & Example & Example & Example & Example \\ \hline
+1.3.1 & to test the functionality of the "supplier" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.2 & to test the functionality of the "delivery" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.3 & to test the functionality of the "producttypye" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.4 & to test the functionality of the "stockcheck" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.5 & to test the functionality of the "deliverystock" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.6 & to test the functionality of the "transactionsproduct" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.3.7 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+
+1.4.1 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.2 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.3 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.4 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.5 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.6 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.7 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+
+1.5.1 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.2 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.3 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.4 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.5 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.6 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.7 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+
+
     \end{longtable}
 \end{center}
 
 \section{Test Data}
 
 \subsection{Original Test Data}
-
-\subsection{Changes to Test Data}
 
 \section{Annotated Samples}
 
