@@ -196,7 +196,7 @@ def delete_product_display():
     with sqlite3.connect("pub_stock.db") as db:
         cursor = db.cursor()
         sql = """select * from Product"""
-        cursor.execute(sql,data)
+        cursor.execute(sql)
         temp = cursor.fetchall()
         for each in temp:
             print(each)
@@ -207,7 +207,7 @@ def delete_transactionsproduct_display():
     with sqlite3.connect("pub_stock.db") as db:
         cursor = db.cursor()
         sql = """select * from TransactionsProduct"""
-        cursor.execute(sql,data)
+        cursor.execute(sql)
         temp = cursor.fetchall()
         for each in temp:
             print(each)
@@ -284,6 +284,9 @@ def user_choice():
 def delete_main():
     delete_display_1()
     user_choice()
+
+if __name__ == "__main__":
+    delete_main()
     
 
 

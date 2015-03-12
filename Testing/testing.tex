@@ -15,13 +15,13 @@ I do not have an original outline from the design section as i ran out of time.
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\  \hline
 
-        1.1 & to test the main menu functions properly  & black bock testing & the use will only enter one valur into this menu and this part of the system only directs the user to a sub menu there is no real precessing thus it is best to test with what output the system gives \\ \hline
-1.2 &to test the "insert new line into database" menu & white box testing & i will use white box testing as there are multiple ways the user can get to the end of this sub menu via any of the 12 options.\\ \hline
-1.3 & to test the "edit currently existing line in database" menu & white box testing & i will use white box testing 12 differnt initial options which then can have a number of secondary options. this part of the program also gives no prompt that the database has been changed so black box testing it not an option. \\ \hline
-1.4 & to test "make transaction" menu & black box testing & this part of the system can have many differnt roots to get through it but these option are only minor such as a different user or stock item. \\ \hline
-1.5 & to test "delete line from database" menu & black box testing & this part of the system is very easy to tell if it is working properly because it has a lot of output statements therefore black box testing is ok to use \\ \hline
-
         1.1 & to test the main menu functions properly  & black bock testing & the use will only enter one value into this menu and this part of the system only directs the user to a sub menu there is no real precessing thus it is best to test with what output the system gives \\ \hline
+1.2 &to test the "insert new line into database" menu & white box testing & i will use white box testing as there are multiple ways the user can get to the end of this sub menu via any of the 12 options.\\ \hline
+1.3 & to test the "edit currently existing line in database" menu & white box testing & i will use white box testing 12 different initial options which then can have a number of secondary options. this part of the program also gives no prompt that the database has been changed so black box testing it not an option. \\ \hline
+1.4 & to test "make transaction" menu & black box testing & this part of the system can have many different roots to get through it but these option are only minor such as a different user or stock item. \\ \hline
+1.5 & to test "delete line from database" menu & modular / black box & this part of the system is all in on modal so i will test the whole modal by its self however i will not be looking at the code its self only the outputs the system gives hence i will be black box testing \\ \hline
+
+1.1 & to test the main menu functions properly  & black bock testing & the use will only enter one value into this menu and this part of the system only directs the user to a sub menu there is no real precessing thus it is best to test with what output the system gives \\ \hline
 1.2 &to test the "insert new line into database" menu & black box & i am currently testing if the system starts a process rather than testing the algorithm at this time\\ \hline
 1.3 & to test the "edit currently existing line in database" menu & black box &  i am currently only testing is the system starts a process rather than testing a complex algorithm. \\ \hline
 1.4 & to test "make transaction" process & black box testing & this part of the system can have many different roots to get through it but these option are only minor such as a different user or stock item. \\ \hline
@@ -41,13 +41,14 @@ I do not have an original detailed from the design section as i ran out of time.
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
 \multicolumn{8}{c}{Test Series 1.1}\\ \hline
        1.1.1 & to test the functionality of the "create new database" option is correct when no database exists & i will load the program i will then enter 1 into the system to create a new database. & 1 & normal /boundary & the program will create a database and state this on screen & works as expected & Example \\ \hline
-1.1.2 & to test the functionality of the "create new database" option is correct when there is an existing database  &  i will load the program i will then enter 1 into the system to create a new database & 1 & normal/boundary &the program will crash due to a database called \detokenize{pub_stock} already exists & the system opens the current database and trys to create a new table with the same name of an existing table this then crashes the program & N/A \\ \hline
+1.1.2 & to test the functionality of the "create new database" option is correct when there is an existing database  &  i will load the program i will then enter 1 into the system to create a new database & 1 & normal /boundary &the program will crash due to a database called \detokenize{pub_stock} already exists & the system opens the current database and trys to create a new table with the same name of an existing table this then crashes the program & N/A \\ \hline
 1.1.3 & to test "insert new line in database" option functionality is correct & i will enter the value 2 into the main menu screen to insert a new line in the database & 2 & normal /boundary & the system will display the select table menu & works as expected  & N/A \\ \hline
- 1.1.4 & to test the functionality of the "edit existing line in database" option functionality is correct & i will enter the value 3 into the main menu & 3 & normal/boundary & the system will display the select table menu & works as expected  & N/A \\ \hline
+ 1.1.4 & to test the functionality of the "edit existing line in database" option functionality is correct & i will enter the value 3 into the main menu & 3 & normal /boundary & the system will display the select table menu & works as expected  & N/A \\ \hline
 1.1.5 & to test the functionality of the "make transaction" option functionality is correct & i will enter the value 4 into the main menu & 4 & normal /boundary & the system will go to the start of the make transaction process & works as expected  & N/A \\ \hline
 1.1.6 & to test if the main menu has validation again erroneous values being entered & i will enter erroneous values into the main menu & g,23,-3 & erroneous & the system will get the user to re-enter a value with a prompt to why the previous value was not valid & the system gets the user to re-enter a value with a prompt to why the previous value was not valid  & N/A \\ \hline
 1.1.7 & to test the "exit program" option functions correctly & i will enter the value 0 into the main menu & 4 & normal /boundary & the program will exit & the program displays a text box to make sure you are sure you wish to exit the program if user selects ok the program closes. if user choses cancel the program ends but the window stays open  & N/A \\ \hline
 \multicolumn{8}{c}{Test Series 1.2}\\ \hline
+
 1.2.1 & to test the functionality of the "brand" option in the insert new line into database menu & i will enter 1 into the insert line into database menu  & 1 & normal /boundary & system starts insert new brand process & system starts insert new brand process & N/A \\ \hline
 1.2.2 & to test the functionality of the "product" option in the insert new line into database menu & i will enter 5 into the insert line into database menu & 5 & normal /boundary & system starts insert new product process & system starts insert new product process & N/A \\ \hline
 1.2.3 & to test the functionality of the "user" option in the insert new line into database menu & i will enter 10 into the insert line into database menu & 10 & normal /boundary & system starts insert new user process & system starts insert new user process & N/A \\ \hline
@@ -55,6 +56,7 @@ I do not have an original detailed from the design section as i ran out of time.
 1.2.5 & to test the functionality of the "location" option in the insert new line into database menu & i will enter 4 into the insert line into database menu & 4 & normal /boundary & system starts insert new location process & system starts insert new location process & N/A \\ \hline
 1.2.6 & to test the functionality of the "transactions" option in the insert new line into database menu & i will enter 9 into the insert line into database menu & 9 & normal /boundary & system starts insert new transactions process & system starts insert new transactions process & N/A \\ \hline
 1.2.7 & to test the functionality of the validation in the insert line in database & i will enter erroneous into the insert line into database menu & 0,16,-6 & erroneous /boundary & system gets user to re-enter invalid data, also gives prompt to why data is invalid & system gets user to re-enter invalid data, also gives prompt to why data is invalid & N/A \\ \hline
+
 \multicolumn{8}{c}{Test Series 1.3}\\ \hline
 1.3.1 & to test the functionality of the "supplier" option in the edit existing line in database menu & i will enter 2 into the edit existing line in database menu & 2 & boundary /normal & starts edit line in supplier process & works as expected & N/A \\ \hline
 1.3.2 & to test the functionality of the "delivery" option in the edit existing line in database menu & i will enter 3 into the edit existing line in database menu & 3 & boundary /normal & starts edit line in delivery process & works as expected & N/A \\ \hline
@@ -64,18 +66,20 @@ I do not have an original detailed from the design section as i ran out of time.
 1.3.6 & to test the functionality of the "transactionsproduct" option in the edit existing line in database menu & i will enter 12 into the edit existing line in database menu & 12 & boundary /normal & starts edit line in transactionsproduct table process & works as expected & N/A \\ \hline
 1.3.7 & to test the functionality of the "brand" option in the edit existing line in database menu & i will enter 1 into the edit existing line in database menu & 1 & boundary /normal & starts edit line in supplier process & works as expected & N/A \\ \hline
 \multicolumn{8}{c}{Test Series 1.4}\\ \hline
+
 1.4.1 & to test the functionality of selecting user in the transaction menu & i will enter 2 in the transaction process to select Sam Hunt as the user & 2 & boundary /normal & system continues to the product selecting stage & works as expected & N/A \\ \hline
-1.4.2 & to test the functionality of selecting products in transaction menu & description & data & type & expected & actual & N/A \\ \hline
-1.4.3 & to test the functionality of selecting user in the transaction menu & i will enter f in the transaction process to select Sam Hunt as the user & f & erroneous & expected & actual & N/A \\ \hline
-1.4.4 & to test the functionality of selecting products in transaction menu & description & data & type & expected & actual & N/A \\ \hline
+1.4.2 & to test the functionality of selecting products in transaction menu & i will enter 1 then 0 into transaction process to select Nero as the product & 1,0 & normal /boundary & will make the transaction and print the price of the transaction & works as expected & N/A \\ \hline
+1.4.3 & to test the functionality of selecting user in the transaction menu & i will enter f,-6,0 in the transaction process to select the user the user (no user has these values as there ID number) & f,-6,0 & erroneous /boundary & the system will crash because there is no validation for any values that are not correct & cashes as expected & N/A \\ \hline
+1.4.4 & to test the functionality of selecting products in transaction menu & i will enter 6,-3,g into the transaction process to select a product & 6,-3,g & erroneous & systems validation will make the user re-enter a value in tell the the user enters a correct value & works as expected & N/A \\ \hline
 1.4.5 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+
 \multicolumn{8}{c}{Test Series 1.5}\\ \hline
-1.5.1 & to test the functionality of "make transaction" option in the main menu &  & data & type & expected & actual & N/A \\ \hline
-1.5.2 & to test the functionality of selecting user in the transaction menu & description & data & type & expected & actual & N/A \\ \hline
-1.5.3 & to test the functionality of selecting products in transaction menu & description & data & type & expected & actual & N/A \\ \hline
-1.5.4 & to test the functionality of selecting user in the transaction menu & description & data & type & expected & actual & N/A \\ \hline
-1.5.5 & to test the functionality of selecting products in transaction menu & description & data & type & expected & actual & N/A \\ \hline
-1.5.6 & to test the functionality of the "brand" option in the edit existing line in database menu & description & data & type & expected & actual & N/A \\ \hline
+1.5.1 & to test the functionality of deleting a location in the delete menu & i will enter 4 then 1 into the delete menu & 4,1 & normal /boundary & system deletes first location in database & works as expected & N/A \\ \hline
+1.5.2 & to test the functionality of deleting a user in the delete menu & i will enter 10 then 1 into the delete menu & 10,1 & normal /boundary & system deletes first user in database & system crashes with unsupported data type error & N/A \\ \hline
+1.5.3 & to test the functionality of deleting a product in the delete menu & i will enter 5 then 1 into the delete menu & 5,1 & normal /boundary & system deletes first product in database & works as expected & N/A \\ \hline
+1.5.4 & to test the functionality of deleting a transactionproduct in the delete menu & i will enter 12 then 1 into the delete menu & 12,1 & normal /boundary & system deletes first transactionproduct in database & works as expected & N/A \\ \hline
+1.5.5 & to test the functionality of deleting a stock in the delete menu & i will enter 7 then 1 into the delete menu & 7,1 & normal /boundary & system deletes first stock in database & works as expected & N/A \\ \hline
+1.5.6 & to test the functionality of delete menu validation & i will enter 18,-5,T into the delete menu & 18,-5,T & normal /boundary & system makes user re-enter a value in tell the user enter a correct value & works as expected & N/A \\ \hline
 
 
     \end{longtable}

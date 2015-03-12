@@ -17,6 +17,7 @@ from insert_new_deliveryStock import *
 from insert_new_location import *
 from insert_new_product import *
 from insert_new_productType import *
+
 from insert_new_Stock import *
 from insert_new_stockCheck import *
 from insert_new_supplier import *
